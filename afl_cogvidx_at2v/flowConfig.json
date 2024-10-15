@@ -1,0 +1,106 @@
+{
+  "id": "flcogvidxt2v",
+  "name": "CogVideoX - Text to Video",
+  "url": "flcogvidxt2v",
+  "description": "Text to Video",
+  "workflowInputs": [
+    {
+      "id": "prompt1",
+      "label": "Prompt",
+      "default": "a white goat with black horns , sporting sleek puprle sunglasses, with its lengthy fur flowing in the breeze, sprints playfully across a rooftop terrace, recently refreshed by a light rain. The scene unfolds from a distance, the goat's energetic bounds growing larger as it approaches the camera, its tail wagging with unrestrained joy, while droplets of water glisten on the concrete behind it. The overcast sky provides a dramatic backdrop, emphasizing the vibrant golden coat of the canine as it dashes towards the viewer.",
+      "nodePath": "30.inputs.prompt"
+    },
+    {
+      "id": "prompt2",
+      "label": "Negative Prompt",
+      "default": "blur,low resolution",
+      "nodePath": "31.inputs.prompt"
+    }
+  ],
+  "seeders": [
+    {
+      "label": "Seed",
+      "nodePath": "34.inputs.seed",
+      "id": "CogVideoSampler_seed",
+      "container": "CogVideoSampler_seed",
+      "key": "seed",
+      "url": "CogVideoSampler"
+    }
+  ],
+  "steppers": [
+  
+    {
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 6,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "34.inputs.cfg",
+      "id": "CogVideoSampler_cfg",
+      "container": "CogVideoSampler_cfg",
+      "key": "cfg",
+      "url": "CogVideoSampler"
+    },
+    {
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "34.inputs.steps",
+      "id": "CogVideoSampler_steps",
+      "container": "CogVideoSampler_steps",
+      "key": "steps",
+      "url": "CogVideoSampler"
+    },
+    {
+      "label": "Frame Rate",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 20,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "33.inputs.frame_rate",
+      "id": "VHS_VideoCombine_frame_rate2",
+      "container": "VHS_VideoCombine_frame_rate2",
+      "key": "frame_rate",
+      "url": "VHS_VideoCombine"
+    }
+  ],
+  "dropdowns": [
+    {
+      "label": "Model",
+      "nodePath": "1.inputs.model",
+      "id": "DownloadAndLoadCogVideoModel_model",
+      "container": "DownloadAndLoadCogVideoModel_model",
+      "key": "model",
+      "url": "DownloadAndLoadCogVideoModel"
+    },
+    {
+      "label": "CLIPLoader",
+      "nodePath": "20.inputs.clip_name",
+      "id": "CLIPLoader_clip_name",
+      "container": "CLIPLoader_clip_name",
+      "key": "clip_name",
+      "url": "CLIPLoader"
+    },
+    {
+      "label": "Scheduler",
+      "nodePath": "34.inputs.scheduler",
+      "id": "CogVideoSampler_scheduler",
+      "container": "CogVideoSampler_scheduler",
+      "key": "scheduler",
+      "url": "CogVideoSampler"
+    }
+  ],
+  "multiSteppers": [],
+  "dropdownSteppers": [],
+  "dimensionSelectors": [],
+  "imageLoaders": [],
+  "configCustomNodes": []
+}

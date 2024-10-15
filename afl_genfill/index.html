@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genfill</title>
+<link rel="stylesheet" href="../flow/genfill/css/main_style.css">
+<style>
+    :root {
+        --background-color: #121213;
+        --border-color: #320848;
+        --text-color: #cba3e5;
+        --hover-background-color: #8621b7;
+        --hover-box-shadow: 0 0 8px rgba(134, 33, 183, 0.6);
+        --focus-border-color: #570d7b;
+        --focus-box-shadow: 0 0 8px rgba(134, 33, 183, 0.6);
+        --focus-outline-color: #8621b7;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif, 'Arial Narrow', Arial;
+    }
+
+    /* body, html {
+        height: 100%;
+        background-color: gray;
+    } */
+
+    .dimension-selector-container {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-color);
+        /* border: 1px solid var(--border-color); */
+        color: var(--text-color);
+        width: 100%;
+        /* height: 150px; */
+    }
+
+    #dimension-selector {
+        display: flex;
+        width: 100%;
+    }
+
+    .dimension-stepper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* border-right: 2px solid var(--border-color); */
+    }
+
+    .dimension-stepper label {
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    .stepper {
+        display: flex;
+    }
+
+    .stepper__button {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        width: 100%;
+        border: none;
+    }
+
+    .stepper__input {
+        border: 1px solid var(--background-color);
+        background-color: var(--background-color);
+        color: var(--text-color);
+        padding: 5px;
+        width: 80px;
+        text-align: center;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .swap-btn {
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .aspect-ratio-selector__select {
+        border: 1px solid var(--border-color);
+        background-color: var(--background-color);
+        color: var(--text-color);
+        padding: 5px;
+        width: 100%;
+    }
+
+    .stepper__button:hover, .swap-btn:hover {
+        background-color: var(--hover-background-color);
+        box-shadow: var(--hover-box-shadow);
+    }
+
+    input[type="number"]::-webkit-inner-spin-button, 
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    input:hover, input:focus, select:hover, select:focus {
+        border-color: var(--focus-border-color);
+        box-shadow: var(--focus-box-shadow);
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        border: 1px solid var(--focus-outline-color);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div id="logo">
+            <div id="img-logo">
+                <img src="genfill/css/goat_genfill_logo.png" alt="goat_genfill_logo.png">
+            </div>
+            <a href="/flow">
+            <div class="logo-text">
+                <span class="left">{</span>
+                <span class="right">}</span>
+                <span class="text"><strong>GENFILL</strong></span> 
+            </div>
+        </div></a>
+        <div id="menu">
+        </div>
+        <div id="status">
+        </div>
+    </header>
+    <div class="content">
+        <div class="left-col">
+                <div id="CheckpointLoaderSimple" class="loader"></div>
+                <div id="VAELoader" class="loader"></div>
+                <div id="LoraLoader" class="loader"></div>
+                <!-- <div id="ControlNetLoader" class="loader"></div> -->
+                <div class="dimension-selector-container">
+                    <div id="dimension-selector">
+                        <div class="dimension-stepper" data-dimension="width">
+                            <label for="width-input">Width</label>
+                            <div class="stepper">
+                                <button class="stepper__button" data-action="decrease" data-target="width-input">-</button>
+                                <input class="stepper__input" type="number" value="1024" id="width-input" name="width"  min="32" max="4096" step="16" >
+                                <button class="stepper__button" data-action="increase" data-target="width-input">+</button>
+                            </div>
+                        </div>
+                        <div class="dimension-stepper" data-dimension="height">
+                            <label for="height-input">Height</label>
+                            <div class="stepper">
+                                <button class="stepper__button" data-action="decrease" data-target="height-input">-</button>
+                                <input class="stepper__input" type="number" value="1024" id="height-input" name="height" min="32" max="4096" step="16">
+                                <button class="stepper__button" data-action="increase" data-target="height-input">+</button>
+                            </div>
+                        </div>
+                        <button class="swap-btn" id="swap-btn">SWAP</button>
+                    </div>
+                    <div class="aspect-ratio-selector">
+                        <select class="aspect-ratio-selector__select" id="aspect-ratio-selector">
+                            <option value="Custom">Custom</option>
+                            <option value="SD1.5">SD1.5</option>
+                            <option value="512x512">1:1 square 512x512</option>
+                            <option value="1024x1024">1:1 square 1024x1024</option>
+                            <option value="512x768">2:3 portrait 512x768</option>
+                            <option value="512x682">3:4 portrait 512x682</option>
+                            <option value="768x512">3:2 landscape 768x512</option>
+                            <option value="682x512">4:3 landscape 682x512</option>
+                            <option value="910x512">16:9 cinema 910x512</option>
+                            <option value="952x512">1.85:1 cinema 952x512</option>
+                            <option value="1024x512">2:1 cinema 1024x512</option>
+                            <option value="1224x512">2.39:1 anamorphic 1224x512</option>
+                            <option value="SDXL">SDXL</option>
+                            <option value="1024x1024">1:1 square 1024x1024</option>
+                            <option value=" 896x1152">3:4 portrait 896x1152</option>
+                            <option value="832x1216">5:8 portrait 832x1216</option>
+                            <option value="768x1344">9:16 portrait 768x1344</option>
+                            <option value="640x1536">9:21 portrait 640x1536</option>
+                            <option value="152x896">4:3 landscape 1152x896</option>
+                            <option value="1216x832">3:2 landscape 1216x832</option>
+                            <option value="1344x768">16:9 landscape 1344x768</option>
+                            <option value="1536x640">21:9 landscape 1536x640</option>
+                        </select> 
+                    </div>
+                </div>
+
+
+            <!-- <div id="component4" class="stepper-container"></div> -->
+            <div id="component2" class="stepper-container"></div>
+            <div id="component1" class="stepper-container"></div>
+            <div id="component3" class="stepper-container"></div>
+            <div id="sampler_name" class="loader"></div>
+            <div id="scheduler" class="loader"></div> 
+            <div id="seed1" class="stepper-container"></div>
+
+            <div id="buttonsgen">
+                <button id="menuButton" class="menuButtons">FILL</button>
+                <button id="interruptButton" class="menuButtons">INTERRUPT</button>
+            </div>
+        </div>
+        <div class="mid-col">
+
+            <div id="drop-area"> 
+                <canvas id="canvas"></canvas>
+
+                <div id="loading-area">
+                    <div id="spinner" ></div>
+                    <progress id="main-progress" class="progress" value="0" max="0"></progress>
+                </div>
+                <div id="control">
+                    <button id="draw-toggle-btn"  >
+                        <img src="genfill/css/pen_icon.png"  alt="Zoom" style="width: 32px; height: auto;">
+                    </button> 
+                    <button id="upload-btn" style="display: none;">Save Drawing</button>
+                    <button id="upload-fullres-btn" style="display: none;">Save Full Drawing</button>
+
+
+                    <button id="mask-btn" >
+                        <img src="genfill/css/double-face-mask.png "  alt="Zoom" style="width: 32px; height: auto;">
+                    </button>
+                    <button id="zoom-in-btn">
+                        <img src="genfill/css/area_in_zoom_icon.png" alt="Zoom" style="width: 32px; height: auto;">
+                    </button>
+                    <button id="zoom-out-btn">
+                        <img src="genfill/css/area_out_zoom_icon.png" alt="Zoom" style="width: 32px; height: auto;">
+                    </button>
+      
+                    <button id="reset-zoom-btn">
+                        <img src="genfill/css/area_zoom_icon.png" alt="Zoom" style="width: 32px; height: auto;">
+                    </button>
+                </div>
+                <div id="title">
+                    <div id="title-text">Extruct</div>
+                    <input type="text" id="extractsubjectprompt" value="woman and guitar">
+                </div>
+                <div id="title" >
+                    <div id="title-text">Prompt</div>
+                    <textarea value="cartoon moon background" id="bgprompt">cartoon moon background</textarea>
+                </div>  
+
+                <div id="title"  style="display: none;">
+                    <div id="title-text">Prompt</div>
+                    <textarea value="A street style photo of a young woman walking confidently down a rainy street pink" id="prompt"></textarea>
+                </div>  
+
+                <!-- <div id="buttonsgen">
+                    <button id="menuButton" class="menuButtons">FILL</button>
+                    <button id="interruptButton" class="menuButtons">INTERRUPT</button>
+                </div> -->
+            </div>
+        </div>
+        <div class="right-col">
+           <!-- <div id="monitor" >
+                <p id="cpu_utilization"></p>
+                <p id="device_type"></p>
+                <p id="gpu_utilization"></p>
+                <p id="vram_total"></p>
+                <p id="vram_used"></p>
+                <p id="vram_used_percent"></p>
+                <p id="hdd_total"></p>
+                <p id="hdd_used"></p>
+                <p id="hdd_used_percent"></p>
+                <p id="ram_total"></p>
+                <p id="ram_used"></p>
+                <p id="ram_used_percent"></p>
+            </div>  -->
+            <div id="images-container">
+            </div>
+        </div>
+    </div> 
+
+    <script>
+
+
+    </script>
+<footer>
+        <p id="copyright">diSty</p>
+</footer>    
+
+</div>
+<script>
+</script>
+
+</body>
+</html>
+<script src="../flow/genfill/js/fabric.min.js"></script>
+<script type="module" src="../flow/genfill/js/app_re.js"></script>
+</body>
+</html>

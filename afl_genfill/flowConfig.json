@@ -1,0 +1,8 @@
+{
+    "id": "genfill",
+    "name": "Genfill (legacy)",
+    "url": "genfill",
+    "description": "The entire 'Flow' project is based on my old project, Genfill, which kind of acts like Generative Fill in Photoshop. To install and run it properly, first download the Genfill workflow, which can be found on Civitai.com. It's a standalone 'Flow' and will be rebuilt soon to fit the new system.",
+    "logo": "genfill/css/goat_genfill_logo.png",
+    "wfpath": "flow/js/genfill.index.html"
+}

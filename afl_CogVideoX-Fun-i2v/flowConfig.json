@@ -1,0 +1,121 @@
+{
+  "id": "flcogvideoxi2v",
+  "name": "CogVideoX-Fun-i2v",
+  "url": "flcogvideoxi2v",
+  "description": "Bring your images to life.",
+  "workflowInputs": [
+    {
+      "id": "prompt1",
+      "label": "Prompt",
+      "nodePath": "30.inputs.prompt",
+      "default": ""
+    },
+    {
+      "id": "prompt2",
+      "label": "Negative Prompt",
+      "nodePath": "31.inputs.prompt",
+      "text": ""
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seed",
+      "label": "Seed",
+      "nodePath": "41.inputs.seed"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "cfg",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 7.5,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "41.inputs.cfg"
+    },
+    {
+      "id": "steps",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "41.inputs.steps"
+    },
+    {
+      "id": "resize_width",
+      "label": "Resize Width",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 1,
+      "defValue": 720,
+      "precision": 0,
+      "scaleFactor": 1,
+      "container": "resize_width",
+      "nodePath": "37.inputs.width"
+    },
+    {
+      "id": "resize_height",
+      "label": "Resize Height",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 1,
+      "defValue": 480,
+      "precision": 0,
+      "scaleFactor": 1,
+      "container": "resize_height",
+      "nodePath": "37.inputs.height"
+    },
+    {
+      "id": "base_resolution",
+      "label": "Base Resolution",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 64,
+      "defValue": 512,
+      "precision": 0,
+      "scaleFactor": 1,
+      "container": "base_resolution",
+      "nodePath": "41.inputs.base_resolution"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "DownloadAndLoadCogVideoModel",
+      "url": "DownloadAndLoadCogVideoModel",
+      "key": "model",
+      "label": "Model",
+      "nodePath": "49.inputs.model"
+    },
+    {
+      "id": "CLIPLoader",
+      "url": "CLIPLoader",
+      "key": "clip_name",
+      "label": "CLIPLoader",
+      "nodePath": "20.inputs.clip_name"
+    },
+    {
+      "id": "CogVideoXFunSampler",
+      "url": "CogVideoXFunSampler",
+      "key": "scheduler",
+      "label": "Sampler",
+      "nodePath": "41.inputs.scheduler"
+    }
+  ],
+  "multiSteppers": [],
+  "dropdownSteppers": [],
+  "dimensionSelectors": [],
+  "imageLoaders": [
+    {
+      "id": "loadimage1",
+      "label": "loadimage1",
+      "nodePath": "36.inputs.image"
+    }
+  ],
+  "configCustomNodes": []
+}

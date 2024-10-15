@@ -1,0 +1,102 @@
+{
+  "id": "flreactor",
+  "name": "ReActor",
+  "url": "flreactor",
+  "description": "Fast Face Swap",
+  "workflowInputs": [],
+  "seeders": [],
+  "steppers": [
+    {
+      "label": "Restore Visibility",
+      "minValue": 0.1,
+      "maxValue": 1,
+      "step": 0.01,
+      "defValue": 1,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "1.inputs.face_restore_visibility",
+      "id": "ReActorFaceSwap_face_restore_visibility",
+      "container": "ReActorFaceSwap_face_restore_visibility",
+      "key": "face_restore_visibility",
+      "url": "ReActorFaceSwap"
+    },
+    {
+      "label": "Codeformer Weight",
+      "minValue": 0.1,
+      "maxValue": 1,
+      "step": 0.01,
+      "defValue": 0.5,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "1.inputs.codeformer_weight",
+      "id": "ReActorFaceSwap_codeformer_weight+2",
+      "container": "ReActorFaceSwap_codeformer_weight+2",
+      "key": "codeformer_weight",
+      "url": "ReActorFaceSwap"
+    }
+  ],
+  "dropdowns": [
+    {
+      "label": "Swap Model",
+      "nodePath": "1.inputs.swap_model",
+      "id": "ReActorFaceSwap_swap_model",
+      "container": "ReActorFaceSwap_swap_model",
+      "key": "swap_model",
+      "url": "ReActorFaceSwap"
+    },
+    {
+      "label": "Face Detection",
+      "nodePath": "1.inputs.facedetection",
+      "id": "ReActorFaceSwap_facedetection",
+      "container": "ReActorFaceSwap_facedetection",
+      "key": "facedetection",
+      "url": "ReActorFaceSwap"
+    },
+    {
+      "label": "Restore Model",
+      "nodePath": "1.inputs.face_restore_model",
+      "id": "ReActorFaceSwap_face_restore_model",
+      "container": "ReActorFaceSwap_face_restore_model",
+      "key": "face_restore_model",
+      "url": "ReActorFaceSwap"
+    },
+    {
+      "label": "Detect Gender",
+      "nodePath": "1.inputs.detect_gender_input",
+      "id": "ReActorFaceSwap_detect_gender_input",
+      "container": "ReActorFaceSwap_detect_gender_input",
+      "key": "detect_gender_input",
+      "url": "ReActorFaceSwap"
+    },
+    {
+      "label": "Detect Gender Source",
+      "nodePath": "1.inputs.detect_gender_source",
+      "id": "ReActorFaceSwap_detect_gender_source",
+      "container": "ReActorFaceSwap_detect_gender_source",
+      "key": "detect_gender_source",
+      "url": "ReActorFaceSwap"
+    }
+  ],
+  "multiSteppers": [],
+  "dropdownSteppers": [],
+  "dimensionSelectors": [],
+  "imageLoaders": [
+    {
+      "label": "loadimage",
+      "nodePath": "2.inputs.image",
+      "id": "LoadImage_image",
+      "container": "LoadImage_image",
+      "key": "image",
+      "url": "LoadImage"
+    },
+    {
+      "label": "loadimage2",
+      "nodePath": "3.inputs.image",
+      "id": "LoadImage_image+2",
+      "container": "LoadImage_image",
+      "key": "image",
+      "url": "LoadImage"
+    }
+  ],
+  "configCustomNodes": []
+}
