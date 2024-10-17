@@ -1,0 +1,182 @@
+{
+  "2": {
+    "inputs": {
+      "model": "MimicMotionMergedUnet_1-0-fp16.safetensors",
+      "precision": "fp16"
+    },
+    "class_type": "DownloadAndLoadMimicMotionModel",
+    "_meta": {
+      "title": "(Down)Load MimicMotionModel"
+    }
+  },
+  "3": {
+    "inputs": {
+      "image": "ComfyUI_07831_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "video": "pose1.mp4",
+      "force_rate": 0,
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": 30,
+      "skip_first_frames": 30,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load Video (Upload) 🎥🅥🅗🅢"
+    }
+  },
+  "16": {
+    "inputs": {
+      "frame_rate": 30,
+      "loop_count": 0,
+      "filename_prefix": "MimicMotion",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "28": {
+    "inputs": {
+      "width": 576,
+      "height": 1024,
+      "upscale_method": "lanczos",
+      "keep_proportion": true,
+      "divisible_by": 64,
+      "crop": "disabled",
+      "image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "35": {
+    "inputs": {
+      "width": 576,
+      "height": 1024,
+      "upscale_method": "lanczos",
+      "keep_proportion": false,
+      "divisible_by": 64,
+      "width_input": [
+        "28",
+        1
+      ],
+      "height_input": [
+        "28",
+        2
+      ],
+      "crop": "disabled",
+      "image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "42": {
+    "inputs": {
+      "include_body": true,
+      "include_hand": true,
+      "include_face": true,
+      "ref_image": [
+        "28",
+        0
+      ],
+      "pose_images": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "MimicMotionGetPoses",
+    "_meta": {
+      "title": "MimicMotion GetPoses"
+    }
+  },
+  "57": {
+    "inputs": {
+      "steps": 20,
+      "cfg_min": 2,
+      "cfg_max": 2,
+      "seed": 42,
+      "fps": 15,
+      "noise_aug_strength": 0,
+      "context_size": 16,
+      "context_overlap": 6,
+      "keep_model_loaded": false,
+      "pose_strength": 1,
+      "pose_start_percent": 0,
+      "pose_end_percent": 1,
+      "image_embed_strength": 1,
+      "mimic_pipeline": [
+        "2",
+        0
+      ],
+      "ref_image": [
+        "28",
+        0
+      ],
+      "pose_images": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "MimicMotionSampler",
+    "_meta": {
+      "title": "MimicMotion Sampler"
+    }
+  },
+  "58": {
+    "inputs": {
+      "decode_chunk_size": 4,
+      "mimic_pipeline": [
+        "2",
+        0
+      ],
+      "samples": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "MimicMotionDecode",
+    "_meta": {
+      "title": "MimicMotion Decode"
+    }
+  },
+  "61": {
+    "inputs": {
+      "image": "ComfyUI_06889_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  }
+}
