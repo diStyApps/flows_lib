@@ -67,6 +67,13 @@
       "label": "Checkpoint",
       "nodePath": "4.inputs.ckpt_name"
     },
+    { 
+      "id": "VAELoader",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "14.inputs.vae_name"
+     },    
     {
       "id": "KSamplerSelect",
       "url": "KSamplerSelect",

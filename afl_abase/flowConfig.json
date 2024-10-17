@@ -17,6 +17,7 @@
   ],
   "dropdowns": [
     { "id": "CheckpointLoaderSimple", "url": "CheckpointLoaderSimple", "key": "ckpt_name", "label": "Checkpoint", "nodePath": "4.inputs.ckpt_name" },
+    { "id": "VAELoader", "url": "VAELoader", "key": "vae_name", "label": "VAE", "nodePath": "10.inputs.vae_name" },
     { "id": "KSamplerSelect", "url": "KSamplerSelect", "key": "sampler_name", "label": "Sampler", "nodePath": "3.inputs.sampler_name" },
     { "id": "BasicScheduler", "url": "BasicScheduler", "key": "scheduler", "label": "Scheduler", "nodePath": "3.inputs.scheduler" }
   ],

@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 960372401440989,
+      "seed": 1033569114347855,
       "steps": 20,
       "cfg": 8,
       "sampler_name": "euler",
@@ -71,8 +71,8 @@
         0
       ],
       "vae": [
-        "4",
-        2
+        "14",
+        0
       ]
     },
     "class_type": "VAEDecode",
@@ -95,7 +95,7 @@
   },
   "12": {
     "inputs": {
-      "image": "CogVideoX-I2V_00090.png",
+      "image": "1Flux_00002_.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -110,13 +110,22 @@
         0
       ],
       "vae": [
-        "4",
-        2
+        "14",
+        0
       ]
     },
     "class_type": "VAEEncode",
     "_meta": {
       "title": "VAE Encode"
+    }
+  },
+  "14": {
+    "inputs": {
+      "vae_name": "sdxl_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
     }
   }
 }
