@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow - Embedded YouTube Player</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="../core/media/ui/flow_logo.png" type="image/png">
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif, 'Arial Narrow', Arial;
+    }
+    :root {
+        --main-bg: #181b1d;
+        --sidebar-bg: #121213;
+        --text-color: #cba3e5;
+        --border-color: #320848;
+        --accent-color: #8621b7;
+        --hover-color: #430474;
+        --scrollbar-thumb-color: #570d7b;
+        --scrollbar-track-color: #1e1e1f;
+        --control-height: 36px;
+        --border-radius: 4px;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: var(--main-bg);
+        background-size: 32px 32px;
+        background-image: radial-gradient(circle, var(--hover-color) 1px, transparent 1px);
+        color: var(--text-color);
+        overflow-x: hidden;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--sidebar-bg);   
+        padding: 10px 50px 0 50px; 
+        text-align: left;
+        color: var(--scrollbar-thumb-color);
+        border-bottom: 1px dashed var(--hover-color);
+        position: relative;
+    }
+    #right-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        padding: 5px;
+    }
+    #Support{
+        color: var(--text-color);
+        margin: 10px;
+        font-size: 12px;
+    }
+    a {
+        text-decoration: none;
+    }
+    header #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header #img-logo {
+        padding-right: 40px;
+    }
+    header .logo-text {
+        display: inline-block;
+        position: relative; 
+        font-family: Arial; 
+        cursor: pointer;
+        color: var(--scrollbar-thumb-color);
+    }
+    header .logo-text .text {
+        overflow: hidden;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        animation-name: animation-text;
+        animation-duration: 2s;
+    }
+    header .left {
+        position: absolute;
+        left: -30px;
+        font-size: 30px;
+        line-height: 30px;
+        animation-name: animation-left;
+        animation-duration: 1.5s;
+        font-weight: bold;
+    }
+    header .right {
+        position: absolute;
+        right: -30px;
+        font-size: 30px;
+        line-height: 30px;
+        animation-name: animation-right;
+        animation-duration: 1.5s;
+        font-weight: bold;
+    }
+    #img-logo img {
+        height: 40px;
+        margin-right: 10px;
+    }
+    #status {
+        font-size: 0.9em;
+    }
+    .main-wrapper {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+    }
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .youtube-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+        background-color: var(--sidebar-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .youtube-embed {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    #player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .video-info {
+        padding: 15px;
+    }
+    .video-title {
+        color: var(--text-color);
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    .video-description {
+        color: #a18aaf;
+        font-size: 0.9em;
+    }
+    h1 {
+        margin-bottom: 20px;
+        color: var(--text-color);
+        text-align: center;
+    }
+    footer {
+        background-color: var(--sidebar-bg);
+        color: var(--scrollbar-thumb-color); 
+        padding: 15px 50px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-top: 1px dashed var(--scrollbar-thumb-color); 
+        margin-top: auto;
+    }
+    @keyframes animation-text {
+        0% {opacity:0;}
+        40% {opacity:0;}
+        100% { opacity:1;}
+    }
+    @keyframes animation-left {
+        from {left: 30px;}
+        to { left: -30px;}
+    }
+    @keyframes animation-right {
+        from {right: 30px;}
+        to { right: -30px;}
+    }
+    .appName{
+        padding: 10px;
+        color: var(--text-color);
+        border-top: 1px dashed;
+        border-left: 1px dashed;
+        border-right: 1px dashed;
+        border-color: var(--scrollbar-thumb-color) var(--scrollbar-thumb-color);
+        font-size: 12px;
+    }
+
+    .appName {
+        font-size: 0; /* This hides the original text */
+    }
+
+    .appName:after {
+        content: "Flow Update";
+        font-size: 1rem; 
+        font-weight: bold;
+    }
+    .video-info ul{
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Header content here -->
+        </header>
+        <div class="main-wrapper">
+            <div class="content">
+                <div class="youtube-container">
+                    <div class="video-info">
+                        <!-- <h2 class="video-title">The Future of AI: Opportunities and Challenges</h2> -->
+                        
+                        <p class="video-description">Update: 0.1.2:</p>
+                            <ul class="video-description">
+                                <li>Search bar added</li>
+                                <li>Category filtering</li>
+                                <li>Favorites feature</li>
+                            </ul>
+                    </div>
+                    <div class="youtube-embed">
+                        <div id="player"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>0.1.2</p>
+        </footer>
+    </div>
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'XC5ETIjL_AY',
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 1,
+                    'modestbranding': 1,
+                    'rel': 0,
+                    'showinfo': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // The video is ready to play
+            // You can add any additional logic here
+        }
+    </script>
+    <script type="module">
+        import { initializeUI } from '/flow/js/main.js';
+        import { insertElement } from '/core/js/common/components/header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            // initializeUI();
+            insertElement();
+        });
+    </script>
+</body>
+</html>
