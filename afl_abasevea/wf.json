@@ -82,8 +82,8 @@
         0
       ],
       "vae": [
-        "4",
-        2
+        "10",
+        0
       ]
     },
     "class_type": "VAEDecode",
@@ -102,6 +102,15 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "Save Image"
+    }
+  },
+  "10": {
+    "inputs": {
+      "vae_name": "sdxl_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
     }
   }
 }
