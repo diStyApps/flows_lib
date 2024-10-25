@@ -1,0 +1,110 @@
+{
+  "id": "flcogvidxinteri2v",
+  "name": "Cogvideox Interpolation",
+  "url": "flcogvidxinteri2v",
+  "description": "Cogvideox Images to Video Interpolation",
+  "workflowInputs": [
+    {
+      "id": "prompt",
+      "label": "Prompt",
+      "nodePath": "30.inputs.prompt"
+    },
+    {
+      "id": "prompt2",
+      "label": "Negative",
+      "nodePath": "31.inputs.prompt"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "CogVideoSampler_seed",
+      "label": "Seed",
+      "nodePath": "57.inputs.seed"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "CogVideoSampler_cfg",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 6,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "57.inputs.cfg"
+    },
+    {
+      "id": "CogVideoSampler_steps",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "57.inputs.steps"
+    },
+    {
+      "id": "CogVideoSampler_num_frames",
+      "label": "Frame Count",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 49,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "57.inputs.num_frames"
+    },
+    {
+      "id": "VHS_VideoCombine_frame_rate2",
+      "label": "Frame Rate",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 24,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "44.inputs.frame_rate"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "DownloadAndLoadCogVideoModel_model",
+      "url": "DownloadAndLoadCogVideoModel",
+      "key": "model",
+      "label": "Model",
+      "nodePath": "1.inputs.model"
+    },
+    {
+      "id": "CLIPLoader_clip_name",
+      "url": "CLIPLoader",
+      "key": "clip_name",
+      "label": "CLIP",
+      "nodePath": "20.inputs.clip_name"
+    },
+    {
+      "id": "CogVideoSampler_scheduler",
+      "url": "CogVideoSampler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "57.inputs.scheduler"
+    }
+  ],
+  "multiSteppers": [],
+  "dropdownSteppers": [],
+  "dimensionSelectors": [],
+  "imageLoaders": [
+    {
+      "id": "LoadImage_image",
+      "label": "Image1",
+      "nodePath": "36.inputs.image"
+    },
+    {
+      "id": "LoadImage_image2",
+      "label": "Image2",
+      "nodePath": "66.inputs.image"
+    }
+  ],
+  "configCustomNodes": []
+}

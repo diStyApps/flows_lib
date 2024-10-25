@@ -1,0 +1,117 @@
+{
+  "id": "flmochit2v",
+  "name": "Mochi - Text to Video",
+  "url": "flmochit2v",
+  "description": "Mochi - Text to Video",
+  "workflowInputs": [
+    {
+      "id": "prompt",
+      "label": "Prompt",
+      "default": "GhostlyStyle, a group of ghost kittens, translucent kittens, kittens coming towards the viewer, meowing kittens, many ghostly kittens, digital art",
+      "nodePath": "1.inputs.prompt"
+    },
+    {
+      "id": "prompt2",
+      "label": "Negative",
+      "default": "Ugly",
+      "nodePath": "8.inputs.prompt"
+    }
+  ],
+  "seeders": [],
+  "steppers": [
+    {
+      "id": "MochiSampler_height",
+      "label": "Hight",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 8,
+      "defValue": 480,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "5.inputs.height"
+    },
+    {
+      "id": "MochiSampler_width",
+      "label": "Width",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 8,
+      "defValue": 848,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "5.inputs.width"
+    },
+    {
+      "id": "MochiSampler_num_frames2",
+      "label": "Frames Count",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 6,
+      "defValue": 25,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "5.inputs.num_frames"
+    },
+    {
+      "id": "MochiSampler_steps",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "5.inputs.steps"
+    },    
+    {
+      "id": "MochiSampler_cfg",
+      "label": "CFG",
+      "minValue": 0.01,
+      "maxValue": 100,
+      "step": 0.01,
+      "defValue": 4.5,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "5.inputs.cfg"
+    },
+    {
+      "id": "VHS_VideoCombine_frame_rate2",
+      "label": "Frame Rate",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 24,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "9.inputs.frame_rate"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "DownloadAndLoadMochiModel_model",
+      "url": "DownloadAndLoadMochiModel",
+      "key": "model",
+      "label": "Model",
+      "nodePath": "4.inputs.model"
+    },    
+    {
+      "id": "CLIPLoader_clip_name",
+      "url": "CLIPLoader",
+      "key": "clip_name",
+      "label": "Clip",
+      "nodePath": "2.inputs.clip_name"
+    },
+    {
+      "id": "DownloadAndLoadMochiModel_vae",
+      "url": "DownloadAndLoadMochiModel",
+      "key": "vae",
+      "label": "VAE",
+      "nodePath": "4.inputs.vae"
+    }
+  ],
+  "multiSteppers": [],
+  "dropdownSteppers": [],
+  "dimensionSelectors": [],
+  "imageLoaders": [],
+  "configCustomNodes": []
+}
