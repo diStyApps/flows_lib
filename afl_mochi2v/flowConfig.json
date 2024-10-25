@@ -7,13 +7,13 @@
     {
       "id": "prompt",
       "label": "Prompt",
-      "default": "GhostlyStyle, a group of ghost kittens, translucent kittens, kittens coming towards the viewer, meowing kittens, many ghostly kittens, digital art",
+      "default": "a ghost dog, translucent dog, dog coming towards the viewer, barking dog, ghostly dog, digital art",
       "nodePath": "1.inputs.prompt"
     },
     {
       "id": "prompt2",
       "label": "Negative",
-      "default": "Ugly",
+      "default": "",
       "nodePath": "8.inputs.prompt"
     }
   ],
