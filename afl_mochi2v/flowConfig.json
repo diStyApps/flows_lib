@@ -13,7 +13,7 @@
     {
       "id": "prompt2",
       "label": "Negative",
-      "default": "",
+      "default": "ugly",
       "nodePath": "8.inputs.prompt"
     }
   ],
