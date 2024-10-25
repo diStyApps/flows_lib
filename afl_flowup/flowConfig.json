@@ -2,7 +2,7 @@
   "id": "flupdate",
   "name": "Flow Updates",
   "url": "flupdate",
-  "description": "Dont miss updates and new features.",
+  "description": "Update 0.1.3",
   "workflowInputs": [
   ],
   "seeders": [
