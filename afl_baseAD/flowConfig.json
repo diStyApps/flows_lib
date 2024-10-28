@@ -139,10 +139,6 @@
   ],
   "imageLoaders": [],
   "configCustomNodes": [
-    { 
-      "title": "ComfyUI Impact Pack",
-      "installUrl": "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
-    }
   ]
 }
 
