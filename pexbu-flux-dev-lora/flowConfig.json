@@ -1,0 +1,141 @@
+{
+  "id": "pexbu",
+  "name": "Flux Dev + Lora",
+  "url": "pexbu-flux-dev-lora",
+  "description": "Image generation with Flux Dev + Lora version, next updates it will be dynamic.",
+  "prompts": [
+    {
+      "id": "promptlptzuh",
+      "label": "Prompt clip_l",
+      "default": "A cartoon happy goat with purple eyes and a black horn in the jungle",
+      "nodePath": "5.inputs.clip_l"
+    },
+    {
+      "id": "promptd9gnlq",
+      "label": "Prompt t5xxl",
+      "default": "A cartoon happy goat with purple eyes and a black horn in the jungle",
+      "nodePath": "5.inputs.t5xxl"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdownt199ur",
+      "url": "UNETLoader",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "1.inputs.unet_name"
+    },
+    {
+      "id": "dropdown7llooq",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "13.inputs.vae_name"
+    },
+    {
+      "id": "dropdowndostq3",
+      "url": "DualCLIPLoader",
+      "key": "clip_name1",
+      "label": "CLIP1",
+      "nodePath": "4.inputs.clip_name1"
+    },
+    {
+      "id": "dropdown2k7rd3",
+      "url": "DualCLIPLoader",
+      "key": "clip_name2",
+      "label": "CLIP2",
+      "nodePath": "4.inputs.clip_name2"
+    },
+    {
+      "id": "dropdowntv93li",
+      "url": "KSamplerSelect",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "9.inputs.sampler_name"
+    },
+    {
+      "id": "dropdowno5cmi2",
+      "url": "BasicScheduler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "3.inputs.scheduler"
+    }  
+  ],
+  "steppers": [
+    {
+      "id": "cfg",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 3.5,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "5.inputs.guidance"
+    },    
+    {
+      "id": "steps",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.steps"
+    },
+    {
+      "id": "batch_size",
+      "label": "Batch size",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 1,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "10.inputs.batch_size"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seed",
+      "label": "Seed",
+      "nodePath": "8.inputs.noise_seed"
+    }
+  ],
+  "dimensionSelectors": [
+    {
+      "id": "dimension-selector-container",
+      "defaultWidth": 0,
+      "defaultHeight": 0,
+      "nodePath": "10.inputs"
+    }
+  ],
+  "multiComponents": [
+    {
+      "id": "multiComponentq65fim",
+      "label": "LoRA",
+      "dropdowns": [
+        {
+          "id": "dropdownwqd241",
+          "url": "LoraLoaderModelOnly",
+          "key": "lora_name",
+          "nodePath": "14.inputs.lora_name"
+        }
+      ],
+      "steppers": [
+        {
+          "id": "stepperieuy0t",
+          "label": "Strength",
+          "minValue": 0.1,
+          "maxValue": 5,
+          "step": 0.1,
+          "defValue": 1,
+          "precision": 2,
+          "scaleFactor": 1,
+          "nodePath": "14.inputs.strength_model"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Tutorials</title>
+    <link rel="icon" href="/core/media/ui/flow_logo.png" type="image/png">
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif, 'Arial Narrow', Arial;
+    }
+    :root {
+        --main-bg: #181b1d;
+        --sidebar-bg: #121213;
+        --text-color: #cba3e5;
+        --border-color: #320848;
+        --accent-color: #8621b7;
+        --hover-color: #430474;
+        --scrollbar-thumb-color: #570d7b;
+        --scrollbar-track-color: #1e1e1f;
+        --control-height: 36px;
+        --border-radius: 0px;
+        --max-container-width: 100%;
+        --control-height: 36px;
+        --control-height: 36px;
+        --color-primary: #430474;
+        --color-secondary: #f4b6ff;
+        --color-accent: #8621b7;
+        --color-highlight: #7d0ab6;
+        --color-primary-text: #cba3e5;
+        --color-border: #570d7b;
+        --color-background: #181b1d;
+        --color-background-secondary: #131312;
+        --color-background-pattern: #4d0f7c;
+        --color-header-background: #131312;
+        --color-header-logo-text: #570d7b;
+        --color-header-text:#570d7b;
+        --color-social-icons: #570d7b;
+        --color-button-primary: #570d7b; 
+        --color-button-primary-hover: #8621b7; 
+        --color-button-primary-text: #f4b6ff; 
+        --color-button-primary-text-hover: #131312; 
+        --color-button-primary-active: #8621b7; 
+        --color-button-primary-text-active: #8621b7; 
+        --color-button-secondary: #131312; 
+        --color-button-secondary-hover: #8621b7; 
+        --color-button-secondary-text: #f4b6ff; 
+        --color-button-secondary-text-hover: #131312; 
+        --color-button-secondary-active: #8621b7; 
+        --color-button-secondary-text-active: #f4b6ff; 
+        --color-progress-background: #2c063f;
+        --color-progress-value:#7d0ab6;
+        --color-scrollbar-track: #1e1e1f;
+        --color-scrollbar-thumb: #570d7b;
+        --color-input-range-thumb: #f4b6ff;
+        --color-input-range-background: #570d7b;
+        --color-spinner:#570d7b;
+        --color-spinner-highlight:#7d0ab6;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: var(--main-bg);
+        color: var(--text-color);
+        overflow: hidden; 
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        height: 100vh; 
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--sidebar-bg);   
+        padding: 10px 50px 0 50px; 
+        text-align: left;
+        color: var(--scrollbar-thumb-color);
+        border-bottom: 1px dashed var(--hover-color);
+        position: relative;
+    }
+
+    #right-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        padding: 5px;
+    }
+
+    #Support{
+        color: var(--text-color);
+        margin: 10px;
+        font-size: 12px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    header #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header #img-logo {
+        padding-right: 40px;
+    }
+    header .logo-text {
+        display: inline-block;
+        position: relative; 
+        font-family: Arial; 
+        cursor: pointer;
+        color: var(--scrollbar-thumb-color);
+    }
+    header .logo-text .text {
+        overflow: hidden;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        animation-name: animation-text;
+        animation-duration: 2s;
+    }
+    header .left {
+        position: absolute;
+        left: -30px;
+        font-size: 30px;
+        line-height: 30px;
+        animation-name: animation-left;
+        animation-duration: 1.5s;
+        font-weight: bold;
+    }
+    header .right {
+        position: absolute;
+        right: -30px;
+        font-size: 30px;
+        line-height: 30px;
+        animation-name: animation-right;
+        animation-duration: 1.5s;
+        font-weight: bold;
+    }
+    #img-logo img {
+        height: 40px;
+        margin-right: 10px;
+    }
+    @keyframes animation-text {
+        0% {opacity:0;}
+        40% {opacity:0;}
+        100% { opacity:1;}
+    }
+    @keyframes animation-left {
+        from {left: 30px;}
+        to { left: -30px;}
+    }
+    @keyframes animation-right {
+        from {right: 30px;}
+        to { right: -30px;}
+    }
+    #status {
+        font-size: 0.9em;
+    }
+    .main-wrapper {
+        display: flex;
+        flex: 1 1 auto; 
+        overflow: hidden; 
+        padding: 10px; 
+        width: 100%; 
+        margin: 0;
+    }
+
+    .content {
+        flex: 3; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 10px; 
+        overflow-y: auto; 
+        min-height: 0; 
+        padding: 16px; 
+    }
+
+    .related-videos {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        max-width: 500px; 
+        overflow-y: auto; 
+        min-height: 0; 
+        padding: 16px;
+        /* max-height: 330px; */
+        height: 100%;
+    }
+
+    .related-videos::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .related-videos::-webkit-scrollbar-track {
+        background: var(--scrollbar-track-color);
+    }
+
+    .related-videos::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+        border-radius: 4px;
+    }
+
+    .main-video-container {
+        width: 100%;
+        margin-bottom: 15px; 
+        background-color: var(--sidebar-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .main-video-container:hover {
+        /* transform: translateY(-5px); */
+        /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); */
+    }
+
+    .video-info {
+        padding: 15px; 
+        background-color: var(--sidebar-bg);
+    }
+
+    .video-title {
+        color: var(--text-color);
+        margin-bottom: 10px; 
+    }
+
+    .video-description {
+        color: #a18aaf;
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .video-description ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    .main-video-embed {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .main-video-embed iframe, .main-video-embed div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .related-video {
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px; 
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        padding: 0;
+        border-radius: var(--border-radius);
+        background-color: var(--sidebar-bg);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        height: 250px;
+        flex: 0 0 auto;
+        border: 1px dashed var(--hover-color);
+
+    }
+
+    .related-video:hover {
+        background-color: var(--hover-color);
+        transform: translateX(3px); 
+    }
+
+    .related-video.active {
+        background-color: var(--accent-color);
+        color: #fff;
+        transform: translateX(0); 
+    }
+
+    .related-video.active .overlay {
+        background-color: rgba(134, 33, 183, 0.8);
+    }
+
+    .related-video.active h3,
+    .related-video.active p,
+    .related-video.active .related-video-info-list li {
+        color: #fff;
+    }
+
+    .related-video img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        display: block;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        transition: background 0.3s;
+    }
+
+    .overlay h3 {
+        margin: 0 0 5px 0;
+        font-size: 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .overlay p {
+        margin: 0 0 5px 0;
+        font-size: 0.9em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .overlay ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: disc;
+        font-size: 0.85em;
+    }
+
+    footer {
+        background-color: var(--sidebar-bg);
+        color: var(--scrollbar-thumb-color); 
+        padding: 15px 20px; 
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-top: 1px dashed var(--scrollbar-thumb-color); 
+        flex: 0 0 auto; 
+    }
+
+    .appName {
+        padding: 5px; 
+        color: var(--text-color);
+        border-top: 1px dashed;
+        border-left: 1px dashed;
+        border-right: 1px dashed;
+        border-color: var(--scrollbar-thumb-color) var(--scrollbar-thumb-color);
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .appName h2 {
+        font-size: 0; 
+    }
+
+    .appName h2:after {
+        content: "Flow Tutorials";
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--scrollbar-track-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+        border-radius: 6px;
+        border: 3px solid var(--scrollbar-track-color);
+    }
+
+    @media (max-width: 1400px) {
+        .main-wrapper {
+            padding: 5px; 
+        }
+
+        .related-videos {
+            max-width: 250px; 
+            max-height: 255px;
+        }
+
+        .related-video {
+            height: 85px;
+        }
+
+        .related-video img {
+            height: 75px;
+        }
+
+        .overlay h3 {
+            font-size: 0.9em;
+        }
+
+        .overlay p {
+            font-size: 0.8em;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .main-wrapper {
+            flex-direction: column;
+        }
+
+        .content {
+            padding-right: 0;
+            flex: none;
+            width: 100%;
+        }
+
+        .related-videos {
+            margin-left: 0;
+            margin-top: 15px;
+            max-width: 100%;
+            flex: none;
+            max-height: 255px;
+        }
+
+        .related-video {
+            margin-bottom: 8px;
+            height: 75px;
+        }
+
+        .video-title {
+            font-size: 1.6em;
+        }
+
+        .overlay h3 {
+            font-size: 1em;
+        }
+
+        .overlay p {
+            font-size: 0.9em;
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 8px 15px; 
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        #logo {
+            margin-bottom: 8px;
+        }
+
+        #img-logo img {
+            height: 35px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+        }
+
+        .left, .right {
+            display: none;
+        }
+
+        .main-wrapper {
+            padding: 5px;
+        }
+
+        footer {
+            padding: 10px 15px;
+        }
+
+        .related-videos {
+            max-height: 180px;
+        }
+
+        .related-video {
+            height: 60px;
+        }
+
+        .related-video img {
+            height: 60px;
+        }
+
+        .overlay h3 {
+            font-size: 0.95em;
+        }
+
+        .overlay p {
+            font-size: 0.85em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .related-video img {
+            display: none; 
+        }
+
+        .related-video-info {
+            flex: 1;
+        }
+
+        .related-video-title {
+            font-size: 0.9em;
+        }
+
+        .related-video-description {
+            font-size: 0.8em;
+        }
+
+        .video-title {
+            font-size: 1.2em; 
+        }
+
+        .main-video-container {
+            margin-bottom: 10px;
+        }
+
+        .overlay {
+            padding: 8px;
+        }
+
+        .overlay ul {
+            padding-left: 16px;
+            font-size: 0.8em;
+        }
+
+        .related-videos {
+            max-height: 180px;
+        }
+
+        .related-video {
+            height: 60px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="logo">
+                <div id="img-logo">
+                    <img src="../core/media/ui/flow_logo.png" alt="Flow Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="text">Flow</span>
+                </div>
+                <div class="left">L</div>
+                <div class="right">R</div>
+            </div>
+            <div id="right-header">
+                <span id="Support"><i class="fas fa-life-ring"></i> Support</span>
+            </div>
+        </header>
+        <div class="main-wrapper">
+            <div class="content" id="main-video">
+                <div class="main-video-container">
+                    <div class="video-info">
+                        <h2 class="video-title" id="main-title"></h2>
+                        <p class="video-description" id="main-description"></p>
+                        <ul class="video-description" id="main-info">
+                        </ul>
+                    </div>
+                    <div class="main-video-embed">
+                        <div id="player"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="related-videos" id="related-videos">
+            </div>
+        </div>
+        <footer>
+            <p id="version">Loading version...</p>
+        </footer>
+    </div>
+        <script>
+            async function getVersion() {
+                try {
+                    const response = await fetch('/api/flow-version');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const versionData = await response.json();
+                    return versionData.version;
+                } catch (error) {
+                    console.error('Error fetching version:', error);
+                    return 'Error fetching version';
+                }
+            }
+
+            (async function() {
+                try {
+                    const version = await getVersion();
+                    document.getElementById('version').textContent = `Version: ${version}`;
+                } catch (error) {
+                    console.error('Error in main script:', error);
+                    document.getElementById('version').textContent = 'Error loading version';
+                }
+            })();
+        </script>
+    <script>
+        class VideoManager {
+            constructor(videoItems) {
+                this.videoItems = videoItems;
+                this.mainPlayer = null;
+                this.currentVideoId = null;
+            }
+
+            initialize() {
+                this.loadYouTubeAPI().then(() => {
+                    this.initializeMainPlayer();
+                    UIManager.createRelatedVideos(this.videoItems, this.loadMainVideo.bind(this));
+                    this.highlightActiveVideo(this.videoItems[0].videoId);
+                }).catch(error => {
+                    console.error("Failed to load YouTube API:", error);
+                });
+            }
+
+            loadYouTubeAPI() {
+                return new Promise((resolve, reject) => {
+                    if (window.YT && window.YT.Player) {
+                        resolve();
+                        return;
+                    }
+                    const tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    tag.onerror = () => reject(new Error("YouTube API failed to load."));
+                    const firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                    
+                    window.onYouTubeIframeAPIReady = () => {
+                        resolve();
+                    };
+                });
+            }
+
+            initializeMainPlayer() {
+                const mainVideo = this.videoItems[0];
+                UIManager.updateMainVideoInfo(mainVideo);
+                this.mainPlayer = new YT.Player('player', {
+                    height: '100%',
+                    width: '100%',
+                    videoId: mainVideo.videoId,
+                    playerVars: {
+                        'autoplay': 0,
+                        'controls': 1,
+                        'modestbranding': 1,
+                        'rel': 0,
+                        'showinfo': 0,
+                        'enablejsapi': 1
+                    },
+                    events: {
+                        'onReady': () => this.onPlayerReady(),
+                        'onStateChange': (event) => this.onPlayerStateChange(event)
+                    }
+                });
+            }
+
+            onPlayerReady() {
+            }
+
+            onPlayerStateChange(event) {
+                if (event.data === YT.PlayerState.PLAYING) {
+                    const videoId = this.mainPlayer.getVideoData().video_id;
+                    this.currentVideoId = videoId;
+                    this.highlightActiveVideo(videoId);
+                }
+            }
+
+            loadMainVideo(video) {
+                UIManager.updateMainVideoInfo(video);
+                if (this.mainPlayer) {
+                    this.mainPlayer.loadVideoById(video.videoId);
+                }
+                this.currentVideoId = video.videoId;
+                this.highlightActiveVideo(video.videoId);
+            }
+
+            highlightActiveVideo(videoId) {
+                UIManager.highlightActiveVideo(videoId);
+            }
+        }
+
+        const UIManager = (() => {
+
+            function updateMainVideoInfo(video) {
+                // document.getElementById('main-title').textContent = video.title;
+                // document.getElementById('main-description').textContent = video.description ? `${video.description}:` : '';
+                const mainInfoList = document.getElementById('main-info');
+                mainInfoList.innerHTML = '';
+                if (video.info && Array.isArray(video.info)) {
+                    video.info.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = item;
+                        // mainInfoList.appendChild(listItem);
+                    });
+                }
+            }
+
+            function createRelatedVideos(videos, onVideoSelect) {
+                const relatedContainer = document.getElementById('related-videos');
+                relatedContainer.innerHTML = '';
+                videos.forEach(video => {
+                    const videoElement = document.createElement('div');
+                    videoElement.className = 'related-video';
+                    videoElement.setAttribute('tabindex', '0'); 
+                    videoElement.setAttribute('role', 'button'); 
+                    videoElement.setAttribute('aria-pressed', 'false');
+                    videoElement.onclick = () => onVideoSelect(video);
+                    videoElement.onkeydown = (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            onVideoSelect(video);
+                        }
+                    };
+
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = getThumbnailUrl(video.videoId);
+                    thumbnail.alt = `${video.title} Thumbnail`;
+
+                    const overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+
+                    const title = document.createElement('h3');
+                    title.textContent = video.title;
+
+                    const description = document.createElement('p');
+                    description.textContent = video.description || '';
+
+                    const infoList = document.createElement('ul');
+                    infoList.className = 'related-video-info-list';
+                    if (video.info && Array.isArray(video.info)) {
+                        video.info.forEach(item => {
+                            const infoItem = document.createElement('li');
+                            infoItem.textContent = item;
+                            infoList.appendChild(infoItem);
+                        });
+                    }
+
+                    overlay.appendChild(title);
+                    overlay.appendChild(description);
+                    if (video.info && video.info.length > 0) {
+                        overlay.appendChild(infoList);
+                    }
+
+                    videoElement.appendChild(thumbnail);
+                    videoElement.appendChild(overlay);
+                    relatedContainer.appendChild(videoElement);
+                });
+            }
+
+            function highlightActiveVideo(videoId) {
+                const relatedVideos = document.querySelectorAll('.related-video');
+                relatedVideos.forEach(videoElement => {
+                    const img = videoElement.querySelector('img');
+                    if (img && img.src.includes(videoId)) {
+                        videoElement.classList.add('active');
+                        videoElement.setAttribute('aria-pressed', 'true');
+                    } else {
+                        videoElement.classList.remove('active');
+                        videoElement.setAttribute('aria-pressed', 'false');
+                    }
+                });
+            }
+
+            function getThumbnailUrl(videoId) {
+                return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+            }
+
+            return {
+                updateMainVideoInfo,
+                createRelatedVideos,
+                highlightActiveVideo,
+                getThumbnailUrl
+            };
+        })();
+
+        const videoItems = [
+            {
+                videoId: "vavqYpvdN0M",
+                title: "Linker Basic Tutorial",
+                description: "",
+                // info: ["Live Preview","LoRA"]
+            },
+            // {
+            //     videoId: "RscQ0oi7bfs",
+            //     title: "Update: 0.1.3", 
+            //     description: "",
+            //     info: ["Custom Themes"]
+            // },
+            // {
+            //     videoId: "XC5ETIjL_AY",
+            //     title: "Update: 0.1.2",
+            //     description: "",
+            //     info: ["Search bar", "Filtering", "Sorting"]
+            // },
+        ];
+        const videoManager = new VideoManager(videoItems);
+        videoManager.initialize();
+    </script>
+    <script type="module">
+        import { insertElement } from '/core/js/common/components/header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            insertElement();
+        });
+    </script>
+</body>
+</html>

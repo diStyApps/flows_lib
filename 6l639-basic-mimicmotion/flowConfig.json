@@ -1,0 +1,102 @@
+{
+  "id": "6l639",
+  "name": "Basic MimicMotion",
+  "url": "6l639-basic-mimicmotion",
+  "description": "MimicMotion: High-Quality Human Motion Video Generation with Confidence-aware Pose Guidance",
+  "dropdowns": [
+    {
+      "id": "dropdownwp09ne",
+      "url": "DownloadAndLoadMimicMotionModel",
+      "key": "model",
+      "label": "Model",
+      "nodePath": "2.inputs.model"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "VHS_LoadVideo_frame_load_cap",
+      "label": "Max Video Frames",
+      "minValue": 1,
+      "maxValue": 500,
+      "step": 1,
+      "defValue": 30,
+      "precision": null,
+      "scaleFactor": 10,
+      "nodePath": "5.inputs.frame_load_cap"
+    },
+    {
+      "id": "VHS_LoadVideo_skip_first_frames",
+      "label": "Skip First Frames",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 1,
+      "precision": null,
+      "scaleFactor": 10,
+      "nodePath": "5.inputs.skip_first_frames"
+    },
+    {
+      "id": "VHS_LoadVideo_select_every_nth",
+      "label": "Skip ever N frames",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 1,
+      "precision": null,
+      "scaleFactor": 1,
+      "nodePath": "5.inputs.select_every_nth"
+    },
+    {
+      "id": "VHS_VideoCombine_frame_rate",
+      "label": "Frame Rate",
+      "minValue": 1,
+      "maxValue": 60,
+      "step": 1,
+      "defValue": 30,
+      "precision": null,
+      "scaleFactor": 1,
+      "nodePath": "16.inputs.frame_rate"
+    },
+    {
+      "id": "MimicMotionSampler_steps",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 20,
+      "precision": 0,
+      "scaleFactor": 10,
+      "nodePath": "57.inputs.steps"
+    },
+    {
+      "id": "MimicMotionSampler_fps",
+      "label": "FPS",
+      "minValue": 1,
+      "maxValue": 60,
+      "step": 1,
+      "defValue": 15,
+      "precision": 0,
+      "scaleFactor": 10,
+      "nodePath": "57.inputs.fps"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "MimicMotionSampler_seed",
+      "label": "Seed",
+      "nodePath": "57.inputs.seed"
+    }
+  ],
+  "imageLoaders": [
+    {
+      "id": "LoadImage_image",
+      "label": "Source",
+      "nodePath": "3.inputs.image"
+    },
+    {
+      "id": "LoadImage_image2",
+      "label": "Target",
+      "nodePath": "61.inputs.image"
+    }
+  ]
+}

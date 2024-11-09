@@ -1,0 +1,81 @@
+{
+  "id": "xo5fx",
+  "name": "OmniGen",
+  "url": "xo5fx-omnigen",
+  "description": "OmniGen is a unified image generation model that can generate a wide range of images from multi-modal prompts. It is designed to be simple, flexible, and easy to use.",
+  "prompts": [
+    {
+      "id": "prompt9kkysk",
+      "label": "Prompt",
+      "default": "the goat in image_1 and the alligator from image_2 in standing in image_3",
+      "nodePath": "7.inputs.text"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "steppervia8yy",
+      "label": "Image CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 1,
+      "precision": 1,
+      "scaleFactor": 1,
+      "nodePath": "4.inputs.img_guidance_scale"
+    },
+    {
+      "id": "stepperhxaitk",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 4.5,
+      "precision": 1,
+      "scaleFactor": 1,
+      "nodePath": "4.inputs.guidance_scale"
+    },
+    {
+      "id": "stepperbj72f8",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 50,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "4.inputs.num_inference_steps"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seederwpig6e",
+      "label": "Seed",
+      "nodePath": "4.inputs.seed"
+    }
+  ],
+  "dimensionSelectors": [
+    {
+      "id": "dimensionSelector731v4v",
+      "defaultWidth": 1024,
+      "defaultHeight": 768,
+      "nodePath": "4.inputs"
+    }
+  ],
+  "imageLoaders": [
+    {
+      "id": "imageLoaderpmbhwi",
+      "label": "ImageLoader",
+      "nodePath": "8.inputs.image"
+    },
+    {
+      "id": "imageLoader0rp9q5",
+      "label": "ImageLoader",
+      "nodePath": "9.inputs.image"
+    },
+    {
+      "id": "imageLoaderggwsfg",
+      "label": "ImageLoader",
+      "nodePath": "11.inputs.image"
+    }
+  ]
+}

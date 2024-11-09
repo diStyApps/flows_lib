@@ -1,0 +1,98 @@
+{
+  "id": "vbna3",
+  "name": "Base - Stable Diffusion - VAE",
+  "url": "vbna3-base-stable-diffusion-vae",
+  "description": "Basic image generation SD and SDXL VAE",
+  "prompts": [
+    {
+      "id": "prompt6u2zvx",
+      "label": "Prompt",
+      "nodePath": "6.inputs.text"
+    },
+    {
+      "id": "prompt77ga86",
+      "label": "Negative Prompt",
+      "nodePath": "7.inputs.text"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdownrijlh3",
+      "url": "CheckpointLoaderSimple",
+      "key": "ckpt_name",
+      "label": "Checkpoint",
+      "nodePath": "4.inputs.ckpt_name"
+    },
+    {
+      "id": "dropdown6a0u5a",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "10.inputs.vae_name"
+    },
+    {
+      "id": "dropdownh4btme",
+      "url": "KSampler",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "3.inputs.sampler_name"
+    },
+    {
+      "id": "dropdownhiqpt0",
+      "url": "KSampler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "3.inputs.scheduler"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "cfg",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 8,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "3.inputs.cfg"
+    },
+    {
+      "id": "steps",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 20,
+      "precision": 0,
+      "scaleFactor": 10,
+      "nodePath": "3.inputs.steps"
+    },
+    {
+      "id": "batch_size",
+      "label": "Batch Size",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 1,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "5.inputs.batch_size"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seed",
+      "label": "Seed",
+      "nodePath": "3.inputs.seed"
+    }
+  ],
+  "dimensionSelectors": [
+    {
+      "id": "dimension-selector-container",
+      "defaultWidth": 1024,
+      "defaultHeight": 768,
+      "nodePath": "5.inputs"
+    }
+  ]
+}

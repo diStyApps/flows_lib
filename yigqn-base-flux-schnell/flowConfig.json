@@ -1,0 +1,96 @@
+{
+  "id": "yigqn",
+  "name": "Base - Flux Schnell",
+  "url": "yigqn-base-flux-schnell",
+  "description": "Basic image generation with Flux Schnell",
+  "prompts": [
+    {
+      "id": "promptou6vcn",
+      "label": "Prompt",
+      "nodePath": "14.inputs.text"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdownkhajbf",
+      "url": "UNETLoader",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "1.inputs.unet_name"
+    },
+    {
+      "id": "dropdown1enhas",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "13.inputs.vae_name"
+    },
+    {
+      "id": "dropdown0gegmr",
+      "url": "DualCLIPLoader",
+      "key": "clip_name1",
+      "label": "CLIP1",
+      "nodePath": "4.inputs.clip_name1"
+    },
+    {
+      "id": "dropdownk1npue",
+      "url": "DualCLIPLoader",
+      "key": "clip_name2",
+      "label": "CLIP2",
+      "nodePath": "4.inputs.clip_name2"
+    },
+    {
+      "id": "dropdownbl6gks",
+      "url": "KSamplerSelect",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "9.inputs.sampler_name"
+    },
+    {
+      "id": "dropdown5l8ppi",
+      "url": "BasicScheduler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "3.inputs.scheduler"
+    } 
+  ],
+  "steppers": [
+    {
+      "id": "stepperfdsg53",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 4,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.steps"
+    },
+    {
+      "id": "batch_size",
+      "label": "Batch size",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 1,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "10.inputs.batch_size"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seed",
+      "label": "Seed",
+      "nodePath": "8.inputs.noise_seed"
+    }
+  ],
+  "dimensionSelectors": [
+    {
+      "id": "dimension-selector-container",
+      "defaultWidth": 0,
+      "defaultHeight": 0,
+      "nodePath": "10.inputs"
+    }
+  ]
+}

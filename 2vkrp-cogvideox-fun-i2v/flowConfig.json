@@ -1,0 +1,112 @@
+{
+  "id": "2vkrp",
+  "name": "CogVideoX-Fun-i2v",
+  "url": "2vkrp-cogvideox-fun-i2v",
+  "description": "Bring your images to life.",
+  "prompts": [
+    {
+      "id": "prompt2v909t",
+      "label": "Prompt",
+      "nodePath": "30.inputs.prompt"
+    },
+    {
+      "id": "prompthywcnc",
+      "label": "Negative Prompt",
+      "nodePath": "31.inputs.prompt"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdown57xjp3",
+      "url": "CLIPLoader",
+      "key": "clip_name",
+      "label": "CLIPLoader",
+      "nodePath": "20.inputs.clip_name"
+    },
+    {
+      "id": "dropdownf7n2wy",
+      "url": "CogVideoXFunSampler",
+      "key": "scheduler",
+      "label": "Sampler",
+      "nodePath": "41.inputs.scheduler"
+    },
+    {
+      "id": "dropdownvt3lk4",
+      "url": "DownloadAndLoadCogVideoModel",
+      "key": "model",
+      "label": "Model",
+      "nodePath": "49.inputs.model"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "resize_width",
+      "label": "Resize Width",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 1,
+      "defValue": 720,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "37.inputs.width"
+    },
+    {
+      "id": "resize_height",
+      "label": "Resize Height",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 1,
+      "defValue": 480,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "37.inputs.height"
+    },
+    {
+      "id": "cfg",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 7.5,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "41.inputs.cfg"
+    },
+    {
+      "id": "steps",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "41.inputs.steps"
+    },
+    {
+      "id": "base_resolution",
+      "label": "Base Resolution",
+      "minValue": 32,
+      "maxValue": 2048,
+      "step": 64,
+      "defValue": 512,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "41.inputs.base_resolution"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seed",
+      "label": "Seed",
+      "nodePath": "41.inputs.seed"
+    }
+  ],
+  "imageLoaders": [
+    {
+      "id": "loadimage1",
+      "label": "loadimage1",
+      "nodePath": "36.inputs.image"
+    }
+  ]
+}

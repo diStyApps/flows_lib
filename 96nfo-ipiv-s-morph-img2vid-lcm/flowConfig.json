@@ -1,0 +1,79 @@
+{
+  "id": "96nfo",
+  "name": "ipiv's Morph img2vid LCM",
+  "url": "96nfo-ipiv-s-morph-img2vid-lcm",
+  "description": "Based on ipiv's Morph - img2vid AnimateDiff LCM workflow, need to download the models manuely, instructions in the original workflow: civitai.com ipivs-morph-img2vid-animatediff-lcm , this will be more autmated in future updates.",
+  "dropdowns": [
+    {
+      "id": "dropdownetle89",
+      "url": "CheckpointLoaderSimple",
+      "key": "ckpt_name",
+      "label": "Model",
+      "nodePath": "564.inputs.ckpt_name"
+    },
+    {
+      "id": "dropdownegtkaa",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "85.inputs.vae_name"
+    },
+    {
+      "id": "dropdownoz6blh",
+      "url": "UpscaleModelLoader",
+      "key": "model_name",
+      "label": "Upscale Model",
+      "nodePath": "270.inputs.model_name"
+    },
+    {
+      "id": "dropdownyxx4bg",
+      "url": "RIFE VFI",
+      "key": "ckpt_name",
+      "label": "RIFE VFI",
+      "nodePath": "732.inputs.ckpt_name"
+    },
+    {
+      "id": "dropdowny0g4cq",
+      "url": "IPAdapterModelLoader",
+      "key": "ipadapter_file",
+      "label": "IPAdapter Model",
+      "nodePath": "796.inputs.ipadapter_file"
+    },
+    {
+      "id": "dropdowniod0rh",
+      "url": "CLIPVisionLoader",
+      "key": "clip_name",
+      "label": "CLIPVision",
+      "nodePath": "798.inputs.clip_name"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seed",
+      "label": "Seed",
+      "nodePath": "80.inputs.seed"
+    }
+  ],
+  "imageLoaders": [
+    {
+      "id": "loadimage2",
+      "label": "loadimage2",
+      "nodePath": "135.inputs.image"
+    },
+    {
+      "id": "loadimage1",
+      "label": "loadimage1",
+      "nodePath": "142.inputs.image"
+    },
+    {
+      "id": "loadimage3",
+      "label": "loadimage3",
+      "nodePath": "680.inputs.image"
+    },
+    {
+      "id": "loadimage4",
+      "label": "loadimage4",
+      "nodePath": "683.inputs.image"
+    }
+  ]
+}
