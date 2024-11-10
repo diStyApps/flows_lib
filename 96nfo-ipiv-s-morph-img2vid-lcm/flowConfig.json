@@ -19,6 +19,20 @@
       "nodePath": "85.inputs.vae_name"
     },
     {
+      "id": "dropdowniod0rh",
+      "url": "CLIPVisionLoader",
+      "key": "clip_name",
+      "label": "CLIPVision",
+      "nodePath": "798.inputs.clip_name"
+    },
+    {
+      "id": "dropdowny0g4cq",
+      "url": "IPAdapterModelLoader",
+      "key": "ipadapter_file",
+      "label": "IPAdapter Model",
+      "nodePath": "796.inputs.ipadapter_file"
+    },
+    {
       "id": "dropdownoz6blh",
       "url": "UpscaleModelLoader",
       "key": "model_name",
@@ -31,20 +45,6 @@
       "key": "ckpt_name",
       "label": "RIFE VFI",
       "nodePath": "732.inputs.ckpt_name"
-    },
-    {
-      "id": "dropdowny0g4cq",
-      "url": "IPAdapterModelLoader",
-      "key": "ipadapter_file",
-      "label": "IPAdapter Model",
-      "nodePath": "796.inputs.ipadapter_file"
-    },
-    {
-      "id": "dropdowniod0rh",
-      "url": "CLIPVisionLoader",
-      "key": "clip_name",
-      "label": "CLIPVision",
-      "nodePath": "798.inputs.clip_name"
     }
   ],
   "seeders": [
