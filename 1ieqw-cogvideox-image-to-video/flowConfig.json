@@ -19,18 +19,18 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdowncf2m82",
-      "url": "CLIPLoader",
-      "key": "clip_name",
-      "label": "CLIPLoader",
-      "nodePath": "20.inputs.clip_name"
-    },
-    {
       "id": "dropdownwpu3a1",
       "url": "DownloadAndLoadCogVideoModel",
       "key": "model",
       "label": "Model",
       "nodePath": "1.inputs.model"
+    },
+    {
+      "id": "dropdowncf2m82",
+      "url": "CLIPLoader",
+      "key": "clip_name",
+      "label": "CLIPLoader",
+      "nodePath": "20.inputs.clip_name"
     },
     {
       "id": "dropdownx6gqnk",
@@ -42,26 +42,15 @@
   ],
   "steppers": [
     {
-      "id": "stepperr03loz",
-      "label": "Frames Number",
+      "id": "steppereffg5r",
+      "label": "Frame Count",
       "minValue": 1,
       "maxValue": 500,
       "step": 1,
-      "defValue": 30,
+      "defValue": 49,
       "precision": 0,
       "scaleFactor": 0,
       "nodePath": "57.inputs.num_frames"
-    },    
-    {
-      "id": "VHS_VideoCombine_frame_rate2",
-      "label": "Frame Rate",
-      "minValue": 0,
-      "maxValue": 100,
-      "step": 1,
-      "defValue": 20,
-      "precision": 0,
-      "scaleFactor": 1,
-      "nodePath": "44.inputs.frame_rate"
     },
     {
       "id": "CogVideoSampler_cfg2",
@@ -84,6 +73,17 @@
       "precision": 1,
       "scaleFactor": 1,
       "nodePath": "57.inputs.steps"
+    },
+    {
+      "id": "stepperbgfib4",
+      "label": "Frame Rate",
+      "minValue": 0,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 24,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "44.inputs.frame_rate"
     }
   ],
   "seeders": [
