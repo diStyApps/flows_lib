@@ -1,1 +1,423 @@
-{"172":{"inputs":{"text":["198",0],"clip":["175",0]},"class_type":"CLIPTextEncode","_meta":{"title":"CLIP Text Encode (Positive Prompt)"}},"173":{"inputs":{"samples":["177",0],"vae":["174",0]},"class_type":"VAEDecode","_meta":{"title":"VAE Decode"}},"174":{"inputs":{"vae_name":"ae.sft"},"class_type":"VAELoader","_meta":{"title":"Load VAE"}},"175":{"inputs":{"clip_name1":"t5xxl_fp8_e4m3fn.safetensors","clip_name2":"ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors","type":"flux"},"class_type":"DualCLIPLoader","_meta":{"title":"DualCLIPLoader"}},"176":{"inputs":{"unet_name":"flux_1Dev.safetensors","weight_dtype":"fp8_e4m3fn"},"class_type":"UNETLoader","_meta":{"title":"Load Diffusion Model"}},"177":{"inputs":{"noise":["181",0],"guider":["180",0],"sampler":["178",0],"sigmas":["179",0],"latent_image":["183",0]},"class_type":"SamplerCustomAdvanced","_meta":{"title":"SamplerCustomAdvanced"}},"178":{"inputs":{"sampler_name":"euler"},"class_type":"KSamplerSelect","_meta":{"title":"KSamplerSelect"}},"179":{"inputs":{"scheduler":"beta","steps":30,"denoise":0.7000000000000001,"model":["176",0]},"class_type":"BasicScheduler","_meta":{"title":"BasicScheduler"}},"180":{"inputs":{"model":["186",0],"conditioning":["182",0]},"class_type":"BasicGuider","_meta":{"title":"BasicGuider"}},"181":{"inputs":{"noise_seed":652585963645033},"class_type":"RandomNoise","_meta":{"title":"RandomNoise"}},"182":{"inputs":{"guidance":4.5,"conditioning":["172",0]},"class_type":"FluxGuidance","_meta":{"title":"FluxGuidance"}},"183":{"inputs":{"samples":["185",0],"mask":["187",0]},"class_type":"SetLatentNoiseMask","_meta":{"title":"Set Latent Noise Mask"}},"184":{"inputs":{"image":"clipspace/clipspace-mask-131959.40000003576.png [input]","upload":"image"},"class_type":"LoadImage","_meta":{"title":"Load Image"}},"185":{"inputs":{"pixels":["194",0],"vae":["174",0]},"class_type":"VAEEncode","_meta":{"title":"VAE Encode"}},"186":{"inputs":{"model":["176",0]},"class_type":"DifferentialDiffusion","_meta":{"title":"Differential Diffusion"}},"187":{"inputs":{"amount":200,"device":"auto","mask":["192",0]},"class_type":"MaskBlur+","_meta":{"title":"🔧 Mask Blur"}},"188":{"inputs":{"padding":100,"region_type":"dominant","mask":["203",1]},"class_type":"Mask Crop Region","_meta":{"title":"Mask Crop Region"}},"189":{"inputs":{"width":["188",6],"height":["188",7],"position":"top-left","x_offset":["188",3],"y_offset":["188",2],"image":["184",0]},"class_type":"ImageCrop+","_meta":{"title":"🔧 Image Crop"}},"190":{"inputs":{"images":["194",0]},"class_type":"PreviewImage","_meta":{"title":"Preview Image"}},"191":{"inputs":{"mask":["188",0]},"class_type":"MaskToImage","_meta":{"title":"Convert Mask to Image"}},"192":{"inputs":{"channel":"red","image":["193",0]},"class_type":"ImageToMask","_meta":{"title":"Convert Image to Mask"}},"193":{"inputs":{"width":1024,"height":1024,"upscale_method":"lanczos","keep_proportion":true,"divisible_by":2,"crop":"disabled","image":["191",0]},"class_type":"ImageResizeKJ","_meta":{"title":"Resize Image"}},"194":{"inputs":{"width":1024,"height":1024,"upscale_method":"lanczos","keep_proportion":true,"divisible_by":2,"crop":"disabled","image":["189",0]},"class_type":"ImageResizeKJ","_meta":{"title":"Resize Image"}},"195":{"inputs":{"rgthree_comparer":{"images":[{"name":"A","selected":true,"url":"/api/view?filename=rgthree.compare._temp_hmtns_00011_.png&type=temp&subfolder=&rand=0.29853413797686845"},{"name":"B","selected":true,"url":"/api/view?filename=rgthree.compare._temp_hmtns_00012_.png&type=temp&subfolder=&rand=0.8945757629654914"}]},"image_a":["184",0],"image_b":["201",0]},"class_type":"Image Comparer (rgthree)","_meta":{"title":"Image Comparer (rgthree)"}},"196":{"inputs":{"width":["188",6],"height":["188",7],"upscale_method":"lanczos","keep_proportion":false,"divisible_by":1,"crop":"disabled","image":["173",0]},"class_type":"ImageResizeKJ","_meta":{"title":"Resize Image"}},"197":{"inputs":{"filename_prefix":"ComfyUI","images":["201",0]},"class_type":"SaveImage","_meta":{"title":"Save Image"}},"198":{"inputs":{"text":"a blarina  dancer in purple dress"},"class_type":"Text _O","_meta":{"title":"Prompt"}},"201":{"inputs":{"x":["188",3],"y":["188",2],"resize_source":false,"destination":["184",0],"source":["196",0],"mask":["187",0]},"class_type":"ImageCompositeMasked","_meta":{"title":"ImageCompositeMasked"}},"202":{"inputs":{"images":["173",0]},"class_type":"PreviewImage","_meta":{"title":"Preview Image"}},"203":{"inputs":{"image":"clipspace/clipspace-mask-137653.40000003576.png [input]","upload":"image"},"class_type":"LoadImage","_meta":{"title":"Load Image"}}}
+{
+  "172": {
+    "inputs": {
+      "text": [
+        "198",
+        0
+      ],
+      "clip": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "173": {
+    "inputs": {
+      "samples": [
+        "177",
+        0
+      ],
+      "vae": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "174": {
+    "inputs": {
+      "vae_name": "ae.sft"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "175": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp8_e4m3fn.safetensors",
+      "clip_name2": "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "176": {
+    "inputs": {
+      "unet_name": "flux_1Dev.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "177": {
+    "inputs": {
+      "noise": [
+        "181",
+        0
+      ],
+      "guider": [
+        "180",
+        0
+      ],
+      "sampler": [
+        "178",
+        0
+      ],
+      "sigmas": [
+        "179",
+        0
+      ],
+      "latent_image": [
+        "183",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "178": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "179": {
+    "inputs": {
+      "scheduler": "beta",
+      "steps": 30,
+      "denoise": 0.7000000000000001,
+      "model": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "180": {
+    "inputs": {
+      "model": [
+        "186",
+        0
+      ],
+      "conditioning": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "181": {
+    "inputs": {
+      "noise_seed": 618614205732143
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "182": {
+    "inputs": {
+      "guidance": 4.5,
+      "conditioning": [
+        "172",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "183": {
+    "inputs": {
+      "samples": [
+        "185",
+        0
+      ],
+      "mask": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask",
+    "_meta": {
+      "title": "Set Latent Noise Mask"
+    }
+  },
+  "184": {
+    "inputs": {
+      "image": "clipspace/clipspace-mask-131959.40000003576.png [input]",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "185": {
+    "inputs": {
+      "pixels": [
+        "194",
+        0
+      ],
+      "vae": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "186": {
+    "inputs": {
+      "model": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "Differential Diffusion"
+    }
+  },
+  "187": {
+    "inputs": {
+      "amount": 200,
+      "device": "auto",
+      "mask": [
+        "192",
+        0
+      ]
+    },
+    "class_type": "MaskBlur+",
+    "_meta": {
+      "title": "🔧 Mask Blur"
+    }
+  },
+  "188": {
+    "inputs": {
+      "padding": 100,
+      "region_type": "dominant",
+      "mask": [
+        "203",
+        1
+      ]
+    },
+    "class_type": "Mask Crop Region",
+    "_meta": {
+      "title": "Mask Crop Region"
+    }
+  },
+  "189": {
+    "inputs": {
+      "width": [
+        "188",
+        6
+      ],
+      "height": [
+        "188",
+        7
+      ],
+      "position": "top-left",
+      "x_offset": [
+        "188",
+        3
+      ],
+      "y_offset": [
+        "188",
+        2
+      ],
+      "image": [
+        "184",
+        0
+      ]
+    },
+    "class_type": "ImageCrop+",
+    "_meta": {
+      "title": "🔧 Image Crop"
+    }
+  },
+  "190": {
+    "inputs": {
+      "images": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "191": {
+    "inputs": {
+      "mask": [
+        "188",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "192": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "193": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "upscale_method": "lanczos",
+      "keep_proportion": true,
+      "divisible_by": 2,
+      "crop": "disabled",
+      "image": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "194": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "upscale_method": "lanczos",
+      "keep_proportion": true,
+      "divisible_by": 2,
+      "crop": "disabled",
+      "image": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "196": {
+    "inputs": {
+      "width": [
+        "188",
+        6
+      ],
+      "height": [
+        "188",
+        7
+      ],
+      "upscale_method": "lanczos",
+      "keep_proportion": false,
+      "divisible_by": 1,
+      "crop": "disabled",
+      "image": [
+        "173",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "197": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "198": {
+    "inputs": {
+      "text": "a blarina  dancer in purple dress"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "Prompt"
+    }
+  },
+  "201": {
+    "inputs": {
+      "x": [
+        "188",
+        3
+      ],
+      "y": [
+        "188",
+        2
+      ],
+      "resize_source": false,
+      "destination": [
+        "184",
+        0
+      ],
+      "source": [
+        "196",
+        0
+      ],
+      "mask": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "203": {
+    "inputs": {
+      "image": "clipspace/clipspace-mask-137653.40000003576.png [input]",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  }
+}
