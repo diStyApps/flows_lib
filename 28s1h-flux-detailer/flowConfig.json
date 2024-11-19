@@ -1,0 +1,120 @@
+{
+  "id": "28s1h",
+  "name": "Flux Detailer",
+  "url": "28s1h-flux-detailer",
+  "description": "Flux Detailer - Add, Change and Enhance details.",
+  "prompts": [
+    {
+      "id": "prompt67qcr7",
+      "label": "Prompt",
+      "default": "A cartoon happy dog with purple eyes and a black horn in the jungle",
+      "nodePath": "172.inputs.text"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdownvuieym",
+      "url": "UNETLoader",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "176.inputs.unet_name"
+    },
+    {
+      "id": "dropdown5efesv",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "174.inputs.vae_name"
+    },
+    {
+      "id": "dropdowna3e4iq",
+      "url": "DualCLIPLoader",
+      "key": "clip_name1",
+      "label": "CLIP 1",
+      "nodePath": "175.inputs.clip_name1"
+    },
+    {
+      "id": "dropdownms1fvn",
+      "url": "DualCLIPLoader",
+      "key": "clip_name2",
+      "label": "CLIP 2",
+      "nodePath": "175.inputs.clip_name2"
+    },
+    {
+      "id": "dropdownavvplx",
+      "url": "KSampler",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "178.inputs.sampler_name"
+    },
+    {
+      "id": "dropdownkk2jkr",
+      "url": "KSampler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "179.inputs.scheduler"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "stepper1jz2su",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.01,
+      "defValue": 4.5,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "182.inputs.guidance"
+    },
+    {
+      "id": "stepperhsf2j3",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "179.inputs.steps"
+    },
+    {
+      "id": "stepperai4mur",
+      "label": "Denoise",
+      "minValue": 0,
+      "maxValue": 1,
+      "step": 0.01,
+      "defValue": 0.7,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "179.inputs.denoise"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seedervf7ch3",
+      "label": "Seed",
+      "nodePath": "181.inputs.noise_seed"
+    }
+  ],
+  "dimensionSelectors": [
+    {
+      "id": "dimensionSelectoreeritz",
+      "defaultWidth": 1024,
+      "defaultHeight": 1024,
+      "nodePath": "193.inputs"
+    }
+  ],
+  "canvasLoadedImages": [
+    {
+      "id": "canvasOuptxuboz5",
+      "nodePath": "184.inputs.image"
+    }
+  ],
+  "canvasSelectedMaskOutputs": [
+    {
+      "id": "canvasImageOutput1balp9",
+      "nodePath": "203.inputs.image"
+    }
+  ]
+}
