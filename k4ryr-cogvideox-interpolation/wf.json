@@ -1,1 +1,216 @@
-{"1":{"inputs":{"model":"feizhengcong/CogvideoX-Interpolation","precision":"bf16","fp8_transformer":"disabled","compile":"disabled","enable_sequential_cpu_offload":false},"class_type":"DownloadAndLoadCogVideoModel","_meta":{"title":"(Down)load CogVideo Model"}},"20":{"inputs":{"clip_name":"t5xxl_fp8_e4m3fn.safetensors","type":"sd3"},"class_type":"CLIPLoader","_meta":{"title":"Load CLIP"}},"30":{"inputs":{"prompt":"a 3d cartoon hippo at jungle","strength":1,"force_offload":true,"clip":["20",0]},"class_type":"CogVideoTextEncode","_meta":{"title":"CogVideo TextEncode"}},"31":{"inputs":{"prompt":"The video is not of a high quality, it has a low resolution. Watermark present in each frame. Strange motion trajectory. ","strength":1,"force_offload":true,"clip":["20",0]},"class_type":"CogVideoTextEncode","_meta":{"title":"CogVideo TextEncode"}},"36":{"inputs":{"image":"Flow_00517_.png","upload":"image"},"class_type":"LoadImage","_meta":{"title":"Load Image: Start"}},"37":{"inputs":{"width":720,"height":480,"upscale_method":"lanczos","keep_proportion":false,"divisible_by":16,"crop":"disabled","image":["36",0]},"class_type":"ImageResizeKJ","_meta":{"title":"Resize Image"}},"44":{"inputs":{"frame_rate":8,"loop_count":0,"filename_prefix":"CogVideoX_interpolation","format":"video/h264-mp4","pix_fmt":"yuv420p","crf":19,"save_metadata":true,"pingpong":false,"save_output":true,"images":["56",0]},"class_type":"VHS_VideoCombine","_meta":{"title":"Video Combine 🎥🅥🅗🅢"}},"56":{"inputs":{"enable_vae_tiling":true,"tile_sample_min_height":240,"tile_sample_min_width":360,"tile_overlap_factor_height":0.2,"tile_overlap_factor_width":0.2,"auto_tile_size":true,"pipeline":["57",0],"samples":["57",1]},"class_type":"CogVideoDecode","_meta":{"title":"CogVideo Decode"}},"57":{"inputs":{"height":480,"width":720,"num_frames":49,"steps":20,"cfg":6,"seed":65334758276104,"scheduler":"CogVideoXDPMScheduler","denoise_strength":1,"pipeline":["1",0],"positive":["30",0],"negative":["31",0],"image_cond_latents":["65",0]},"class_type":"CogVideoSampler","_meta":{"title":"CogVideo Sampler"}},"65":{"inputs":{"enable_tiling":false,"pipeline":["1",0],"start_image":["37",0],"end_image":["67",0]},"class_type":"CogVideoImageInterpolationEncode","_meta":{"title":"CogVideo ImageInterpolation Encode"}},"66":{"inputs":{"image":"Flow_00518_.png","upload":"image"},"class_type":"LoadImage","_meta":{"title":"Load Image: End"}},"67":{"inputs":{"width":720,"height":480,"upscale_method":"lanczos","keep_proportion":false,"divisible_by":16,"crop":"disabled","image":["66",0],"get_image_size":["37",0]},"class_type":"ImageResizeKJ","_meta":{"title":"Resize Image"}}}
+{
+  "20": {
+    "inputs": {
+      "clip_name": "t5xxl_fp8_e4m3fn.safetensors",
+      "type": "sd3"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "30": {
+    "inputs": {
+      "prompt": "A cartoon cute happy purple flower with  black horn in the jungle",
+      "strength": 1,
+      "force_offload": false,
+      "clip": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CogVideoTextEncode",
+    "_meta": {
+      "title": "CogVideo TextEncode"
+    }
+  },
+  "31": {
+    "inputs": {
+      "prompt": "The video is not of a high quality, it has a low resolution. Watermark present in each frame. Strange motion trajectory. ",
+      "strength": 1,
+      "force_offload": true,
+      "clip": [
+        "30",
+        1
+      ]
+    },
+    "class_type": "CogVideoTextEncode",
+    "_meta": {
+      "title": "CogVideo TextEncode"
+    }
+  },
+  "36": {
+    "inputs": {
+      "image": "Flow_02940_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "37": {
+    "inputs": {
+      "width": 720,
+      "height": 480,
+      "upscale_method": "lanczos",
+      "keep_proportion": false,
+      "divisible_by": 16,
+      "crop": "disabled",
+      "image": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "44": {
+    "inputs": {
+      "frame_rate": 8,
+      "loop_count": 0,
+      "filename_prefix": "CogVideoX-Interpolation",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "59": {
+    "inputs": {
+      "model": "feizhengcong/CogvideoX-Interpolation",
+      "precision": "bf16",
+      "quantization": "disabled",
+      "enable_sequential_cpu_offload": false,
+      "attention_mode": "sdpa",
+      "load_device": "main_device"
+    },
+    "class_type": "DownloadAndLoadCogVideoModel",
+    "_meta": {
+      "title": "(Down)load CogVideo Model"
+    }
+  },
+  "60": {
+    "inputs": {
+      "enable_vae_tiling": true,
+      "tile_sample_min_height": 240,
+      "tile_sample_min_width": 360,
+      "tile_overlap_factor_height": 0.2,
+      "tile_overlap_factor_width": 0.2,
+      "auto_tile_size": true,
+      "vae": [
+        "59",
+        1
+      ],
+      "samples": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "CogVideoDecode",
+    "_meta": {
+      "title": "CogVideo Decode"
+    }
+  },
+  "62": {
+    "inputs": {
+      "enable_tiling": false,
+      "noise_aug_strength": 0,
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "vae": [
+        "59",
+        1
+      ],
+      "start_image": [
+        "37",
+        0
+      ],
+      "end_image": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "CogVideoImageEncode",
+    "_meta": {
+      "title": "CogVideo ImageEncode"
+    }
+  },
+  "63": {
+    "inputs": {
+      "num_frames": 49,
+      "steps": 25,
+      "cfg": 6,
+      "seed": 0,
+      "scheduler": "CogVideoXDDIM",
+      "denoise_strength": 1,
+      "model": [
+        "59",
+        0
+      ],
+      "positive": [
+        "30",
+        0
+      ],
+      "negative": [
+        "31",
+        0
+      ],
+      "image_cond_latents": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "CogVideoSampler",
+    "_meta": {
+      "title": "CogVideo Sampler"
+    }
+  },
+  "64": {
+    "inputs": {
+      "image": "Flow_02941_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "65": {
+    "inputs": {
+      "width": [
+        "37",
+        1
+      ],
+      "height": [
+        "37",
+        2
+      ],
+      "upscale_method": "lanczos",
+      "keep_proportion": false,
+      "divisible_by": 16,
+      "crop": "disabled",
+      "image": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  }
+}
