@@ -89,6 +89,13 @@
       "nodePath": "17.inputs.steps"
     }
   ],
+  "seeders": [
+    {
+      "id": "seederl409lq",
+      "label": "Seed",
+      "nodePath": "25.inputs.noise_seed"
+    }
+  ],
   "dimensionSelectors": [
     {
       "id": "dimensionSelector1q3anx",
