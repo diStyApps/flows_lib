@@ -92,5 +92,12 @@
       "label": "Seed",
       "nodePath": "63.inputs.seed"
     }
+  ],
+  "imageLoaders": [
+    {
+      "id": "imageLoader2q5a2d",
+      "label": "ImageLoader",
+      "nodePath": "36.inputs.image"
+    }
   ]
 }
