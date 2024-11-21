@@ -5,51 +5,43 @@
   "description": "Text to Video",
   "prompts": [
     {
-      "id": "prompt5jp3p1",
+      "id": "promptee76r8",
       "label": "Prompt",
-      "default": "a white goat with black horns , sporting sleek puprle sunglasses, with its lengthy fur flowing in the breeze, sprints playfully across a rooftop terrace, recently refreshed by a light rain. The scene unfolds from a distance, the goat's energetic bounds growing larger as it approaches the camera, its tail wagging with unrestrained joy, while droplets of water glisten on the concrete behind it. The overcast sky provides a dramatic backdrop, emphasizing the vibrant golden coat of the canine as it dashes towards the viewer.",
+      "default": "A purple dragon, with its shiny scales shining , fly over London playfully  The scene unfolds from a distance, the dragon energetic bounds growing larger as it approaches the camera, its tail wagging with unrestrained joy, while droplets of water glisten on the concrete behind it. The overcast sky provides a dramatic backdrop, dashes towards the viewer.",
       "nodePath": "30.inputs.prompt"
     },
     {
-      "id": "prompt6mr7o0",
+      "id": "prompttuj8ei",
       "label": "Negative Prompt",
-      "default": "blur,low resolution",
       "nodePath": "31.inputs.prompt"
     }
   ],
   "dropdowns": [
     {
-      "id": "dropdown4znt2b",
-      "url": "CLIPLoader",
-      "key": "clip_name",
-      "label": "CLIPLoader",
-      "nodePath": "20.inputs.clip_name"
-    },
-    {
-      "id": "dropdown9ks5vh",
+      "id": "dropdownadgams",
       "url": "DownloadAndLoadCogVideoModel",
       "key": "model",
       "label": "Model",
-      "nodePath": "1.inputs.model"
+      "nodePath": "36.inputs.model"
     },
     {
-      "id": "dropdownrlz3g5",
+      "id": "dropdownkfocjm",
+      "url": "CLIPLoader",
+      "key": "clip_name",
+      "label": "CLIP",
+      "nodePath": "20.inputs.clip_name"
+    },
+    {
+      "id": "dropdownnw5nvx",
       "url": "CogVideoSampler",
       "key": "scheduler",
       "label": "Scheduler",
-      "nodePath": "34.inputs.scheduler"
-    },
-    {
-      "id": "dropdowni22l8l",
-      "url": "CogVideoSampler",
-      "key": "num_frames",
-      "label": "Frame Count",
-      "nodePath": "34.inputs.num_frames"
+      "nodePath": "35.inputs.scheduler"
     }
   ],
   "steppers": [
     {
-      "id": "stepper4kkvr6",
+      "id": "stepper83yhgn",
       "label": "Frame Count",
       "minValue": 1,
       "maxValue": 100,
@@ -57,21 +49,21 @@
       "defValue": 49,
       "precision": 0,
       "scaleFactor": 1,
-      "nodePath": "34.inputs.num_frames"
-    },    
+      "nodePath": "35.inputs.num_frames"
+    },
     {
-      "id": "CogVideoSampler_cfg",
+      "id": "stepper2nwvkw",
       "label": "CFG",
       "minValue": 0.1,
       "maxValue": 100,
       "step": 0.1,
       "defValue": 6,
       "precision": 1,
-      "scaleFactor": 10,
-      "nodePath": "34.inputs.cfg"
+      "scaleFactor": 1,
+      "nodePath": "35.inputs.cfg"
     },
     {
-      "id": "CogVideoSampler_steps",
+      "id": "stepperzj1jx0",
       "label": "Steps",
       "minValue": 1,
       "maxValue": 100,
@@ -79,25 +71,25 @@
       "defValue": 30,
       "precision": 0,
       "scaleFactor": 1,
-      "nodePath": "34.inputs.steps"
+      "nodePath": "35.inputs.steps"
     },
     {
-      "id": "VHS_VideoCombine_frame_rate2",
+      "id": "stepper0x24vk",
       "label": "Frame Rate",
       "minValue": 1,
-      "maxValue": 100,
+      "maxValue": 120,
       "step": 1,
-      "defValue": 20,
+      "defValue": 24,
       "precision": 0,
       "scaleFactor": 1,
       "nodePath": "33.inputs.frame_rate"
-    }    
+    }
   ],
   "seeders": [
     {
-      "id": "CogVideoSampler_seed",
+      "id": "seederzjyo4s",
       "label": "Seed",
-      "nodePath": "34.inputs.seed"
+      "nodePath": "35.inputs.seed"
     }
   ]
 }
