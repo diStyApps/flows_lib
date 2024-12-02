@@ -93,9 +93,9 @@
       "nodePath": "17.inputs.image"
     }
   ],
-  "canvasSelectedMaskOutputs": [
+  "canvasAlphaOutputs": [
     {
-      "id": "canvasSelectedMaskOutputkdrmol",
+      "id": "canvasAlphaOutputm1f0a3",
       "label": "ImageLoader",
       "nodePath": "45.inputs.image"
     }
