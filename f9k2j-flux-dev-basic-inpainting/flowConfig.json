@@ -1,0 +1,106 @@
+{
+  "id": "f9k2j",
+  "name": "Flux Dev Basic Inpainting",
+  "url": "f9k2j-flux-dev-basic-inpainting",
+  "description": "Flux Dev Basic Inpainting",
+  "prompts": [
+    {
+      "id": "prompt1zg03d",
+      "label": "Prompt",
+      "nodePath": "16.inputs.text"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdownbffen4",
+      "url": "UNETLoader",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "1.inputs.unet_name"
+    },
+    {
+      "id": "dropdownz8aoc7",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "13.inputs.vae_name"
+    },
+    {
+      "id": "dropdownq22604",
+      "url": "DualCLIPLoader",
+      "key": "clip_name1",
+      "label": "CLIP 1",
+      "nodePath": "4.inputs.clip_name1"
+    },
+    {
+      "id": "dropdownai96ww",
+      "url": "DualCLIPLoader",
+      "key": "clip_name2",
+      "label": "CLIP 2",
+      "nodePath": "4.inputs.clip_name2"
+    },
+    {
+      "id": "dropdown8217bn",
+      "url": "KSampler",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "9.inputs.sampler_name"
+    },
+    {
+      "id": "dropdownwxhqxt",
+      "url": "KSampler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "3.inputs.scheduler"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "stepperw3j2fn",
+      "label": "Flux Guidance",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 4.5,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "17.inputs.guidance"
+    },
+    {
+      "id": "steppergt78p6",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.steps"
+    },
+    {
+      "id": "stepperzz5fph",
+      "label": "Denoise",
+      "minValue": 0,
+      "maxValue": 1,
+      "step": 0.01,
+      "defValue": 0.65,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.denoise"
+    }
+  ],
+  "canvasLoadedImages": [
+    {
+      "id": "canvasLoadedImage27cw7y",
+      "label": "Loaded Image",
+      "nodePath": "15.inputs.image"
+    }
+  ],
+  "canvasAlphaOutputs": [
+    {
+      "id": "canvasAlphaOutput7jk0ip",
+      "label": "Mask",
+      "nodePath": "19.inputs.image"
+    }
+  ]
+}

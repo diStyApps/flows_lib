@@ -1,0 +1,146 @@
+{
+  "id": "3pw8q",
+  "name": "Flux Dev Fill - Detailed Inpainting",
+  "url": "3pw8q-flux-dev-fill-detailed-inpainting",
+  "description": "Flux Dev Fill - Detailed Inpainting",
+  "prompts": [
+    {
+      "id": "promptl2ml94",
+      "label": "Prompt",
+      "nodePath": "23.inputs.text"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdownbif5v0",
+      "url": "UNETLoader",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "31.inputs.unet_name"
+    },
+    {
+      "id": "dropdown1khdf1",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "32.inputs.vae_name"
+    },
+    {
+      "id": "dropdownfd63fd",
+      "url": "DualCLIPLoader",
+      "key": "clip_name1",
+      "label": "CLIP 1",
+      "nodePath": "34.inputs.clip_name1"
+    },
+    {
+      "id": "dropdownai2o2r",
+      "url": "DualCLIPLoader",
+      "key": "clip_name2",
+      "label": "CLIP 2",
+      "nodePath": "34.inputs.clip_name2"
+    },
+    {
+      "id": "dropdownoyf7eh",
+      "url": "KSampler",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "3.inputs.sampler_name"
+    },
+    {
+      "id": "dropdownlbdvxl",
+      "url": "KSampler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "3.inputs.scheduler"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "stepperbdj638",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.steps"
+    },
+    {
+      "id": "stepperglvnvl",
+      "label": "Flux Guidance",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 30,
+      "precision": 1,
+      "scaleFactor": 1,
+      "nodePath": "26.inputs.guidance"
+    },
+    {
+      "id": "steppereyyslr",
+      "label": "Denoise",
+      "minValue": 0,
+      "maxValue": 1,
+      "step": 0.01,
+      "defValue": 1,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.denoise"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seedervd0pqw",
+      "label": "Seed",
+      "nodePath": "3.inputs.seed"
+    }
+  ],
+  "canvasLoadedImages": [
+    {
+      "id": "canvasLoadedImagejiqo2p",
+      "label": "Loaded Image",
+      "nodePath": "45.inputs.image"
+    }
+  ],
+  "canvasCroppedMaskOutputs": [
+    {
+      "id": "canvasCroppedMaskOutput0g8bhn",
+      "label": "Cropped Mask",
+      "nodePath": "46.inputs.image"
+    }
+  ],
+  "canvasCroppedImageOutputs": [
+    {
+      "id": "canvasCroppedImageOutputokj7dm",
+      "label": "Cropped Image",
+      "nodePath": "47.inputs.image"
+    }
+  ],
+  "dataComponents": [
+    {
+      "id": "dataComponentwclmdz",
+      "name": "croppedImageMmaskWidth",
+      "dataPath": "croppedImage.mask.width",
+      "nodePath": "49.inputs.width"
+    },
+    {
+      "id": "dataComponentoue5jx",
+      "name": "croppedImageMmaskHeight",
+      "dataPath": "croppedImage.mask.height",
+      "nodePath": "49.inputs.height"
+    },
+    {
+      "id": "dataComponent148kha",
+      "name": "croppedImageMmaskX",
+      "dataPath": "croppedImage.mask.x",
+      "nodePath": "50.inputs.x"
+    },
+    {
+      "id": "dataComponents1p6zs",
+      "name": "croppedImageMmaskY",
+      "dataPath": "croppedImage.mask.y",
+      "nodePath": "50.inputs.y"
+    }
+  ]
+}

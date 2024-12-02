@@ -1,8 +1,8 @@
 {
-  "id": "28s1h",
-  "name": "Flux Detailer",
-  "url": "28s1h-flux-detailer",
-  "description": "Flux Detailer - Add, Change and Enhance details.",
+  "id": "b5v17",
+  "name": "Flux GGUF Detailer ",
+  "url": "b5v17-flux-gguf-detailer",
+  "description": "Flux GGUF Detailer - Add, Change and Enhance details.",
   "prompts": [
     {
       "id": "promptu56464",
@@ -12,11 +12,11 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdowntj2hwe",
-      "url": "UNETLoader",
+      "id": "dropdownd2zlct",
+      "url": "UnetLoaderGGUF",
       "key": "unet_name",
       "label": "Model",
-      "nodePath": "176.inputs.unet_name"
+      "nodePath": "227.inputs.unet_name"
     },
     {
       "id": "dropdownmx7xr0",

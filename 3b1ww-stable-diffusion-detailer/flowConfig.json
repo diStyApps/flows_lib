@@ -1,0 +1,130 @@
+{
+  "id": "3b1ww",
+  "name": "Stable Diffusion Detailer ",
+  "url": "3b1ww-stable-diffusion-detailer",
+  "description": "Stable Diffusion Detailer - Add, Change and Enhance details ",
+  "prompts": [
+    {
+      "id": "promptt45re0",
+      "label": "Prompt",
+      "nodePath": "6.inputs.text"
+    },
+    {
+      "id": "promptk6ebhy",
+      "label": "Negative Prompt",
+      "nodePath": "7.inputs.text"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdown1uuxoz",
+      "url": "CheckpointLoaderSimple",
+      "key": "ckpt_name",
+      "label": "Model",
+      "nodePath": "14.inputs.ckpt_name"
+    },
+    {
+      "id": "dropdowng3hmnv",
+      "url": "KSampler",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "3.inputs.sampler_name"
+    },
+    {
+      "id": "dropdownw1sfex",
+      "url": "KSampler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "3.inputs.scheduler"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "stepperhjzz3z",
+      "label": "CFG",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 7.5,
+      "precision": 1,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.cfg"
+    },
+    {
+      "id": "stepper9xa0v1",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.steps"
+    },
+    {
+      "id": "stepperuxha6f",
+      "label": "Denoise",
+      "minValue": 0,
+      "maxValue": 1,
+      "step": 0.01,
+      "defValue": 0.65,
+      "precision": 2,
+      "scaleFactor": 1,
+      "nodePath": "3.inputs.denoise"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seeder3f5ypl",
+      "label": "Seed",
+      "nodePath": "3.inputs.seed"
+    }
+  ],
+  "canvasLoadedImages": [
+    {
+      "id": "canvasLoadedImagev8qj4q",
+      "label": "Loaded Image",
+      "nodePath": "15.inputs.image"
+    }
+  ],
+  "canvasCroppedMaskOutputs": [
+    {
+      "id": "canvasCroppedMaskOutputx4e5vs",
+      "label": "Cropped Mask",
+      "nodePath": "16.inputs.image"
+    }
+  ],
+  "canvasCroppedImageOutputs": [
+    {
+      "id": "canvasCroppedImageOutput2sud4p",
+      "label": "Cropped Image",
+      "nodePath": "17.inputs.image"
+    }
+  ],
+  "dataComponents": [
+    {
+      "id": "dataComponentjgva4h",
+      "name": "croppedImageMmaskWidth",
+      "dataPath": "croppedImage.mask.width",
+      "nodePath": "22.inputs.width"
+    },
+    {
+      "id": "dataComponentath5bh",
+      "name": "croppedImageMmaskHeight",
+      "dataPath": "croppedImage.mask.height",
+      "nodePath": "22.inputs.height"
+    },
+    {
+      "id": "dataComponentx4pxow",
+      "name": "croppedImageMmaskX",
+      "dataPath": "croppedImage.mask.x",
+      "nodePath": "23.inputs.x"
+    },
+    {
+      "id": "dataComponentfffq2i",
+      "name": "croppedImageMmaskY",
+      "dataPath": "croppedImage.mask.y",
+      "nodePath": "23.inputs.y"
+    }
+  ]
+}
