@@ -40,13 +40,6 @@
       "nodePath": "11.inputs.clip_name2"
     },
     {
-      "id": "dropdownqweueo",
-      "url": "CLIPVisionLoader",
-      "key": "clip_name",
-      "label": "CLIP Vision",
-      "nodePath": "38.inputs.clip_name"
-    },
-    {
       "id": "dropdownzxzujk",
       "url": "KSampler",
       "key": "sampler_name",
@@ -59,6 +52,13 @@
       "key": "scheduler",
       "label": "Scheduler",
       "nodePath": "17.inputs.scheduler"
+    },
+    {
+      "id": "dropdownwspwk2",
+      "url": "CLIPVisionLoader",
+      "key": "clip_name",
+      "label": "CLIP Vision",
+      "nodePath": "38.inputs.clip_name"
     }
   ],
   "steppers": [

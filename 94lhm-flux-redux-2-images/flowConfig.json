@@ -40,15 +40,15 @@
       "nodePath": "11.inputs.clip_name2"
     },
     {
-      "id": "dropdownqweueo",
+      "id": "dropdowni6gkge",
       "url": "CLIPVisionLoader",
       "key": "clip_name",
       "label": "CLIP Vision",
       "nodePath": "38.inputs.clip_name"
     },
     {
-      "id": "dropdownzxzujk",
-      "url": "KSampler",
+      "id": "dropdownnw7tf8",
+      "url": "KSamplerSelect",
       "key": "sampler_name",
       "label": "Sampler",
       "nodePath": "16.inputs.sampler_name"
