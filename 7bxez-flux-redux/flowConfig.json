@@ -19,6 +19,13 @@
       "nodePath": "12.inputs.unet_name"
     },
     {
+      "id": "dropdownec3mq2",
+      "url": "UNETLoader",
+      "key": "weight_dtype",
+      "label": "Weight Type",
+      "nodePath": "12.inputs.weight_dtype"
+    },
+    {
       "id": "dropdownrrinno",
       "url": "VAELoader",
       "key": "vae_name",
