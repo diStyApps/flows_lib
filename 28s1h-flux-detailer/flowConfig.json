@@ -12,11 +12,18 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdowntj2hwe",
+      "id": "dropdownlyjoa5",
       "url": "UNETLoader",
       "key": "unet_name",
       "label": "Model",
       "nodePath": "176.inputs.unet_name"
+    },
+    {
+      "id": "dropdownrup8m6",
+      "url": "UNETLoader",
+      "key": "weight_dtype",
+      "label": "Type",
+      "nodePath": "176.inputs.weight_dtype"
     },
     {
       "id": "dropdownmx7xr0",
@@ -78,12 +85,12 @@
       "nodePath": "182.inputs.guidance"
     },
     {
-      "id": "stepperw5sdcg",
+      "id": "stepperncm55b",
       "label": "Denoise",
       "minValue": 0,
       "maxValue": 1,
       "step": 0.01,
-      "defValue": 0.65,
+      "defValue": 0.75,
       "precision": 2,
       "scaleFactor": 1,
       "nodePath": "179.inputs.denoise"
@@ -141,6 +148,12 @@
       "name": "croppedImageMmaskHeight",
       "dataPath": "croppedImage.mask.height",
       "nodePath": "225.inputs.height"
+    },
+    {
+      "id": "dataComponentwqeuhr",
+      "name": "growMaskForFinalComposite",
+      "dataPath": "croppedImage.mask.growMaskForFinalComposite",
+      "nodePath": "228.inputs.expand"
     }
   ]
 }

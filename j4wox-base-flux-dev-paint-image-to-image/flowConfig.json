@@ -12,11 +12,18 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdown5s9le3",
+      "id": "dropdownsrxdmq",
       "url": "UNETLoader",
       "key": "unet_name",
       "label": "Model",
       "nodePath": "1.inputs.unet_name"
+    },
+    {
+      "id": "dropdownv5rybn",
+      "url": "UNETLoader",
+      "key": "weight_dtype",
+      "label": "Type",
+      "nodePath": "1.inputs.weight_dtype"
     },
     {
       "id": "dropdownl712kg",

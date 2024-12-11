@@ -5,19 +5,25 @@
   "description": "FLUX.1 Fill [dev] is a 12 billion parameter rectified flow transformer capable of filling areas in existing images based on a text description.",
   "prompts": [
     {
-      "id": "promptpvguui",
+      "id": "promptnhe8dh",
       "label": "Prompt",
-      "default": "A cartoon cute happy female white fully clothed samurai armor with purple eyes and a black horn holding katana in the jungle",
       "nodePath": "23.inputs.text"
     }
   ],
   "dropdowns": [
     {
-      "id": "dropdownn8hwfi",
+      "id": "dropdownbg4otv",
       "url": "UNETLoader",
       "key": "unet_name",
       "label": "Model",
       "nodePath": "31.inputs.unet_name"
+    },
+    {
+      "id": "dropdownuisydd",
+      "url": "UNETLoader",
+      "key": "weight_dtype",
+      "label": "Type",
+      "nodePath": "31.inputs.weight_dtype"
     },
     {
       "id": "dropdown4t47fl",

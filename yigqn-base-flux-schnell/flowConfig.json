@@ -12,11 +12,18 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdownkhajbf",
+      "id": "dropdownyhxb9a",
       "url": "UNETLoader",
       "key": "unet_name",
       "label": "Model",
       "nodePath": "1.inputs.unet_name"
+    },
+    {
+      "id": "dropdown1lt9j7",
+      "url": "UNETLoader",
+      "key": "weight_dtype",
+      "label": "Type",
+      "nodePath": "1.inputs.weight_dtype"
     },
     {
       "id": "dropdown1enhas",
@@ -52,7 +59,7 @@
       "key": "scheduler",
       "label": "Scheduler",
       "nodePath": "3.inputs.scheduler"
-    } 
+    }
   ],
   "steppers": [
     {

@@ -12,11 +12,18 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdown5s9le3",
+      "id": "dropdown1jpmbu",
       "url": "UNETLoader",
       "key": "unet_name",
       "label": "Model",
       "nodePath": "1.inputs.unet_name"
+    },
+    {
+      "id": "dropdownckqoqb",
+      "url": "UNETLoader",
+      "key": "weight_dtype",
+      "label": "Type",
+      "nodePath": "1.inputs.weight_dtype"
     },
     {
       "id": "dropdownl712kg",
@@ -52,7 +59,7 @@
       "key": "scheduler",
       "label": "Scheduler",
       "nodePath": "3.inputs.scheduler"
-    } 
+    }
   ],
   "steppers": [
     {
@@ -65,7 +72,7 @@
       "precision": 1,
       "scaleFactor": 10,
       "nodePath": "17.inputs.guidance"
-    },   
+    },
     {
       "id": "steppervmw5jy",
       "label": "Steps",
@@ -88,7 +95,6 @@
       "scaleFactor": 10,
       "nodePath": "3.inputs.denoise"
     }
-
   ],
   "seeders": [
     {
@@ -99,8 +105,8 @@
   ],
   "imageLoaders": [
     {
-      "id": "loadimage1",
-      "label": "loadimage1",
+      "id": "imageLoaderttahyr",
+      "label": "Load Image",
       "nodePath": "15.inputs.image"
     }
   ]
