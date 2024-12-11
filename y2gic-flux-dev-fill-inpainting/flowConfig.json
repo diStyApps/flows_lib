@@ -12,18 +12,18 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdownbg4otv",
+      "id": "dropdownirqtgl",
       "url": "UNETLoader",
       "key": "unet_name",
       "label": "Model",
-      "nodePath": "31.inputs.unet_name"
+      "nodePath": "49.inputs.unet_name"
     },
     {
-      "id": "dropdownuisydd",
+      "id": "dropdownrd7bea",
       "url": "UNETLoader",
       "key": "weight_dtype",
       "label": "Type",
-      "nodePath": "31.inputs.weight_dtype"
+      "nodePath": "49.inputs.weight_dtype"
     },
     {
       "id": "dropdown4t47fl",
