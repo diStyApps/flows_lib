@@ -27,18 +27,18 @@
       "nodePath": "32.inputs.vae_name"
     },
     {
-      "id": "dropdownevzu9l",
-      "url": "DualCLIPLoader",
+      "id": "dropdownmtt7lg",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name1",
       "label": "CLIP 1",
-      "nodePath": "34.inputs.clip_name1"
+      "nodePath": "49.inputs.clip_name1"
     },
     {
-      "id": "dropdownhcr321",
-      "url": "DualCLIPLoader",
+      "id": "dropdownfim289",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name2",
       "label": "CLIP 2",
-      "nodePath": "34.inputs.clip_name2"
+      "nodePath": "49.inputs.clip_name2"
     },
     {
       "id": "dropdownwh6yyt",
@@ -57,8 +57,8 @@
   ],
   "steppers": [
     {
-      "id": "stepperfgpldm",
-      "label": "CFG",
+      "id": "steppermv1rcy",
+      "label": "Flux Guidance",
       "minValue": 0.1,
       "maxValue": 100,
       "step": 0.1,

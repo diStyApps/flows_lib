@@ -26,18 +26,18 @@
       "nodePath": "174.inputs.vae_name"
     },
     {
-      "id": "dropdownp0gvzr",
-      "url": "DualCLIPLoader",
+      "id": "dropdownphanu7",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name1",
       "label": "CLIP 1",
-      "nodePath": "175.inputs.clip_name1"
+      "nodePath": "229.inputs.clip_name1"
     },
     {
-      "id": "dropdownj0g4le",
-      "url": "DualCLIPLoader",
+      "id": "dropdownh5rxym",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name2",
       "label": "CLIP 2",
-      "nodePath": "175.inputs.clip_name2"
+      "nodePath": "229.inputs.clip_name2"
     },
     {
       "id": "dropdownbtrv3k",
@@ -56,17 +56,6 @@
   ],
   "steppers": [
     {
-      "id": "stepper6k6nwr",
-      "label": "Steps",
-      "minValue": 1,
-      "maxValue": 100,
-      "step": 1,
-      "defValue": 30,
-      "precision": 0,
-      "scaleFactor": 1,
-      "nodePath": "179.inputs.steps"
-    },
-    {
       "id": "steppere2j2fl",
       "label": "Flux Guidance",
       "minValue": 0.1,
@@ -78,12 +67,23 @@
       "nodePath": "182.inputs.guidance"
     },
     {
-      "id": "stepperw5sdcg",
+      "id": "stepper6k6nwr",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 30,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "179.inputs.steps"
+    },
+    {
+      "id": "stepper80bjn1",
       "label": "Denoise",
       "minValue": 0,
       "maxValue": 1,
       "step": 0.01,
-      "defValue": 0.65,
+      "defValue": 0.75,
       "precision": 2,
       "scaleFactor": 1,
       "nodePath": "179.inputs.denoise"

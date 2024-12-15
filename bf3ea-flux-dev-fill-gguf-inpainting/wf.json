@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 977942785874997,
+      "seed": 716052116366162,
       "steps": 30,
       "cfg": 1,
       "sampler_name": "euler",
@@ -33,7 +33,7 @@
     "inputs": {
       "text": "",
       "clip": [
-        "34",
+        "49",
         0
       ]
     },
@@ -73,7 +73,7 @@
   },
   "17": {
     "inputs": {
-      "image": "canvasLoadedImagewx7omi (123).png",
+      "image": "canvasLoadedImagewx7omi (326).png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -83,9 +83,9 @@
   },
   "23": {
     "inputs": {
-      "text": "a purple dress",
+      "text": "A cartoon cute happy female white fully clothed samurai armor with purple eyes and a black horn holding katana in the jungle",
       "clip": [
-        "34",
+        "49",
         0
       ]
     },
@@ -114,17 +114,6 @@
     "class_type": "VAELoader",
     "_meta": {
       "title": "Load VAE"
-    }
-  },
-  "34": {
-    "inputs": {
-      "clip_name1": "clip_l.safetensors",
-      "clip_name2": "t5xxl_fp16.safetensors",
-      "type": "flux"
-    },
-    "class_type": "DualCLIPLoader",
-    "_meta": {
-      "title": "DualCLIPLoader"
     }
   },
   "38": {
@@ -170,7 +159,7 @@
   },
   "45": {
     "inputs": {
-      "image": "canvasAlphaOutputxb9h1e (45).png",
+      "image": "canvasAlphaOutputxb9h1e (60).png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -222,6 +211,17 @@
     "class_type": "MaskBlur+",
     "_meta": {
       "title": "🔧 Mask Blur"
+    }
+  },
+  "49": {
+    "inputs": {
+      "clip_name1": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
+      "clip_name2": "clip_l-Q8_0.gguf",
+      "type": "sdxl"
+    },
+    "class_type": "DualCLIPLoaderGGUF",
+    "_meta": {
+      "title": "DualCLIPLoader (GGUF)"
     }
   }
 }

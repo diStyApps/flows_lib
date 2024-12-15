@@ -17,7 +17,7 @@
       "key": "unet_name",
       "label": "Model",
       "nodePath": "16.inputs.unet_name"
-    },    
+    },
     {
       "id": "dropdowncux6rx",
       "url": "VAELoader",
@@ -26,18 +26,18 @@
       "nodePath": "13.inputs.vae_name"
     },
     {
-      "id": "dropdown1c5pw2",
-      "url": "DualCLIPLoader",
+      "id": "dropdown1h9gkm",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name1",
-      "label": "CLIP1",
-      "nodePath": "4.inputs.clip_name1"
+      "label": "CLIP 1",
+      "nodePath": "17.inputs.clip_name1"
     },
     {
-      "id": "dropdownitr4tj",
-      "url": "DualCLIPLoader",
+      "id": "dropdownbjli82",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name2",
-      "label": "CLIP2",
-      "nodePath": "4.inputs.clip_name2"
+      "label": "CLIP 2",
+      "nodePath": "17.inputs.clip_name2"
     },
     {
       "id": "dropdown5qno8g",
@@ -56,8 +56,8 @@
   ],
   "steppers": [
     {
-      "id": "cfg",
-      "label": "CFG",
+      "id": "stepper5f83mg",
+      "label": "Flux Guidance",
       "minValue": 0.1,
       "maxValue": 100,
       "step": 0.1,
@@ -65,7 +65,7 @@
       "precision": 1,
       "scaleFactor": 10,
       "nodePath": "15.inputs.guidance"
-    },    
+    },
     {
       "id": "steps",
       "label": "Steps",
@@ -88,7 +88,6 @@
       "scaleFactor": 1,
       "nodePath": "10.inputs.batch_size"
     }
-
   ],
   "seeders": [
     {

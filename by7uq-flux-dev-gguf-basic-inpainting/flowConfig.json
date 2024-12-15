@@ -26,18 +26,18 @@
       "nodePath": "13.inputs.vae_name"
     },
     {
-      "id": "dropdownq22604",
-      "url": "DualCLIPLoader",
+      "id": "dropdown3umfkg",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name1",
       "label": "CLIP 1",
-      "nodePath": "4.inputs.clip_name1"
+      "nodePath": "24.inputs.clip_name1"
     },
     {
-      "id": "dropdownai96ww",
-      "url": "DualCLIPLoader",
+      "id": "dropdowngbbtxh",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name2",
       "label": "CLIP 2",
-      "nodePath": "4.inputs.clip_name2"
+      "nodePath": "24.inputs.clip_name2"
     },
     {
       "id": "dropdown8217bn",
