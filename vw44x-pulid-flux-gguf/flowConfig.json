@@ -27,18 +27,18 @@
       "nodePath": "10.inputs.vae_name"
     },
     {
-      "id": "DualCLIPLoader2",
-      "url": "DualCLIPLoader",
-      "key": "clip_name2",
-      "label": "CLIPLoader-2",
-      "nodePath": "64.inputs.clip_name2"
+      "id": "dropdown8wbmc9",
+      "url": "DualCLIPLoaderGGUF",
+      "key": "clip_name1",
+      "label": "CLIP 1",
+      "nodePath": "67.inputs.clip_name1"
     },
     {
-      "id": "DualCLIPLoader1",
-      "url": "DualCLIPLoader",
-      "key": "clip_name1",
-      "label": "CLIPLoader-1",
-      "nodePath": "64.inputs.clip_name1"
+      "id": "dropdowns8wtpe",
+      "url": "DualCLIPLoaderGGUF",
+      "key": "clip_name2",
+      "label": "CLIP 2",
+      "nodePath": "67.inputs.clip_name2"
     },
     {
       "id": "PulidFluxModelLoader",
@@ -71,8 +71,8 @@
   ],
   "steppers": [
     {
-      "id": "cfg",
-      "label": "CFG",
+      "id": "stepperyaz4lo",
+      "label": "Flux Guidance",
       "minValue": 0.1,
       "maxValue": 100,
       "step": 0.1,
