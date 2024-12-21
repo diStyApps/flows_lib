@@ -82,6 +82,17 @@
       "nodePath": "26.inputs.guidance"
     },
     {
+      "id": "stepperotelcl",
+      "label": "Model Sampling",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 7,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "67.inputs.shift"
+    },
+    {
       "id": "stepperyouvqz",
       "label": "Steps",
       "minValue": 1,
