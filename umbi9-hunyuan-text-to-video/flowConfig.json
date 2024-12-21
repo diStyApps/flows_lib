@@ -1,0 +1,145 @@
+{
+  "id": "umbi9",
+  "name": "Hunyuan - Text to Video",
+  "url": "umbi9-hunyuan-text-to-video",
+  "description": "Hunyuan - Text to Video",
+  "prompts": [
+    {
+      "id": "prompt3czl48",
+      "label": "Prompt",
+      "default": "The camera ((slowly pushes in)) on the scene with a 25-year-old beautiful Caucasian woman with long, blonde hair and blue eyes . She is a female supermodel posing in a skintight, high-shine purple silk catsuit, showcasing a pert upper body, with the outfit clinging to her curves. She is looking straight at the camera talks to the camera then after a few seconds turns slowly and walks away from the wall behind her to the left and leaves the scene. She is talking throughout the scene. The wind catches her hair and it flutter in the breeze gently as she moves away. Her head is the focus, captured in exquisite detail in a high-quality, close-up photograph. Behind her is a vertical wall adorned with reflective circular silver discs, their reflective surfaces casting a mesmerizing array of highlights and reflections. The image is rendered in stunning 8K resolution, with a shallow depth of field, achieved with a 100mm lens on a mirrorless camera, emphasizing the subject's flawless features. Inspired by the sleek, aesthetic of high-fashion photography with a touch of futuristic glamour reminiscent of sci-fi concept art.",
+      "nodePath": "44.inputs.text"
+    }
+  ],
+  "dropdowns": [
+    {
+      "id": "dropdownw0jzbe",
+      "url": "UnetLoaderGGUF",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "79.inputs.unet_name"
+    },
+    {
+      "id": "dropdownetzdwc",
+      "url": "VAELoader",
+      "key": "vae_name",
+      "label": "VAE",
+      "nodePath": "10.inputs.vae_name"
+    },
+    {
+      "id": "dropdown0wxjfi",
+      "url": "DualCLIPLoader",
+      "key": "clip_name1",
+      "label": "CLIP 1",
+      "nodePath": "11.inputs.clip_name1"
+    },
+    {
+      "id": "dropdown4kb015",
+      "url": "DualCLIPLoader",
+      "key": "clip_name2",
+      "label": "CLIP 2",
+      "nodePath": "11.inputs.clip_name2"
+    },
+    {
+      "id": "dropdownim1zrk",
+      "url": "DualCLIPLoader",
+      "key": "type",
+      "label": "Type",
+      "nodePath": "11.inputs.type"
+    },
+    {
+      "id": "dropdownt2yu5x",
+      "url": "KSampler",
+      "key": "sampler_name",
+      "label": "Sampler",
+      "nodePath": "16.inputs.sampler_name"
+    },
+    {
+      "id": "dropdownzeg0kq",
+      "url": "KSampler",
+      "key": "scheduler",
+      "label": "Scheduler",
+      "nodePath": "17.inputs.scheduler"
+    }
+  ],
+  "steppers": [
+    {
+      "id": "stepperyy79tw",
+      "label": "Flux Guidance",
+      "minValue": 0.1,
+      "maxValue": 100,
+      "step": 0.1,
+      "defValue": 10,
+      "precision": 1,
+      "scaleFactor": 10,
+      "nodePath": "26.inputs.guidance"
+    },
+    {
+      "id": "stepperyouvqz",
+      "label": "Steps",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 20,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "17.inputs.steps"
+    },
+    {
+      "id": "steppergpm8ry",
+      "label": "Length",
+      "minValue": 1,
+      "maxValue": 10000,
+      "step": 6,
+      "defValue": 73,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "45.inputs.length"
+    },
+    {
+      "id": "stepper9m2lpf",
+      "label": "Frame Rate",
+      "minValue": 1,
+      "maxValue": 120,
+      "step": 1,
+      "defValue": 24,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "78.inputs.frame_rate"
+    },
+    {
+      "id": "stepper992w70",
+      "label": "Batch Size",
+      "minValue": 1,
+      "maxValue": 100,
+      "step": 1,
+      "defValue": 1,
+      "precision": 0,
+      "scaleFactor": 1,
+      "nodePath": "45.inputs.batch_size"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "inputeekcj6",
+      "label": "File Name",
+      "defValue": "Hunyuan ",
+      "nodePath": "78.inputs.filename_prefix"
+    }
+  ],
+  "seeders": [
+    {
+      "id": "seeder2hokpn",
+      "label": "Seed",
+      "nodePath": "25.inputs.noise_seed"
+    }
+  ],
+  "dimensionSelectors": [
+    {
+      "id": "dimensionSelectorlrfx2r",
+      "defaultWidth": 848,
+      "defaultHeight": 480,
+      "nodePath": "45.inputs"
+    }
+  ]
+}

@@ -19,16 +19,6 @@
       "title": "DualCLIPLoader"
     }
   },
-  "12": {
-    "inputs": {
-      "unet_name": "hunyuan_video_t2v_720p_bf16.safetensors",
-      "weight_dtype": "fp8_e4m3fn_fast"
-    },
-    "class_type": "UNETLoader",
-    "_meta": {
-      "title": "Load Diffusion Model"
-    }
-  },
   "13": {
     "inputs": {
       "noise": [
@@ -72,7 +62,7 @@
       "steps": 20,
       "denoise": 1,
       "model": [
-        "12",
+        "79",
         0
       ]
     },
@@ -99,7 +89,7 @@
   },
   "25": {
     "inputs": {
-      "noise_seed": 49543990584969
+      "noise_seed": 204843794870317
     },
     "class_type": "RandomNoise",
     "_meta": {
@@ -134,8 +124,8 @@
   },
   "45": {
     "inputs": {
-      "width": 848,
-      "height": 480,
+      "width": 512,
+      "height": 720,
       "length": 73,
       "batch_size": 1
     },
@@ -148,7 +138,7 @@
     "inputs": {
       "shift": 7,
       "model": [
-        "12",
+        "79",
         0
       ]
     },
@@ -194,6 +184,15 @@
     "class_type": "VHS_VideoCombine",
     "_meta": {
       "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "79": {
+    "inputs": {
+      "unet_name": "hunyuan-video-t2v-720p-Q5_K_S.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
     }
   }
 }
