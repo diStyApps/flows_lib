@@ -1,7 +1,7 @@
 {
-  "id": "umbi9",
-  "name": "Hunyuan - Text to Video",
-  "url": "umbi9-hunyuan-text-to-video",
+  "id": "85up7",
+  "name": "Hunyuan - GGUF - Text to Video",
+  "url": "85up7-hunyuan-gguf-text-to-video",
   "description": "Hunyuan - Text to Video GGUF",
   "prompts": [
     {
@@ -60,6 +60,13 @@
       "key": "scheduler",
       "label": "Scheduler",
       "nodePath": "17.inputs.scheduler"
+    },
+    {
+      "id": "dropdown2tjmf6",
+      "url": "VHS_VideoCombine",
+      "key": "format",
+      "label": "Format",
+      "nodePath": "78.inputs.format"
     }
   ],
   "steppers": [
