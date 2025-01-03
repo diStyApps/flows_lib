@@ -12,11 +12,11 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdownf05k36",
+      "id": "dropdownx58lgk",
       "url": "UnetLoaderGGUF",
       "key": "unet_name",
       "label": "Model",
-      "nodePath": "20.inputs.unet_name"
+      "nodePath": "23.inputs.unet_name"
     },
     {
       "id": "dropdownz8aoc7",
@@ -52,6 +52,13 @@
       "key": "scheduler",
       "label": "Scheduler",
       "nodePath": "3.inputs.scheduler"
+    },
+    {
+      "id": "dropdownf05k36",
+      "url": "UnetLoaderGGUF",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "20.inputs.unet_name"
     }
   ],
   "steppers": [

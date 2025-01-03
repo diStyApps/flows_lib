@@ -12,13 +12,6 @@
   ],
   "dropdowns": [
     {
-      "id": "dropdowny2c07i",
-      "url": "UnetLoaderGGUF",
-      "key": "unet_name",
-      "label": "Model",
-      "nodePath": "18.inputs.unet_name"
-    },    
-    {
       "id": "dropdown6i0bgz",
       "url": "VAELoader",
       "key": "vae_name",
@@ -26,18 +19,25 @@
       "nodePath": "13.inputs.vae_name"
     },
     {
-      "id": "dropdown6xnq3f",
-      "url": "DualCLIPLoader",
-      "key": "clip_name1",
-      "label": "CLIP 1",
-      "nodePath": "4.inputs.clip_name1"
+      "id": "dropdowny2c07i",
+      "url": "UnetLoaderGGUF",
+      "key": "unet_name",
+      "label": "Model",
+      "nodePath": "18.inputs.unet_name"
     },
     {
-      "id": "dropdownmalo94",
-      "url": "DualCLIPLoader",
+      "id": "dropdownsq2tr5",
+      "url": "DualCLIPLoaderGGUF",
+      "key": "clip_name1",
+      "label": "CLIP 1",
+      "nodePath": "19.inputs.clip_name1"
+    },
+    {
+      "id": "dropdownbdbijb",
+      "url": "DualCLIPLoaderGGUF",
       "key": "clip_name2",
       "label": "CLIP 2",
-      "nodePath": "4.inputs.clip_name2"
+      "nodePath": "19.inputs.clip_name2"
     },
     {
       "id": "dropdowncje7lx",

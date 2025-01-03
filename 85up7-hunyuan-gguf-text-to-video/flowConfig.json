@@ -60,13 +60,6 @@
       "key": "scheduler",
       "label": "Scheduler",
       "nodePath": "17.inputs.scheduler"
-    },
-    {
-      "id": "dropdown2tjmf6",
-      "url": "VHS_VideoCombine",
-      "key": "format",
-      "label": "Format",
-      "nodePath": "78.inputs.format"
     }
   ],
   "steppers": [

@@ -132,7 +132,7 @@
   },
   "15": {
     "inputs": {
-      "image": "canvasLoadedImage27cw7y (28).png",
+      "image": "canvasLoadedImage27cw7y (2).png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -184,7 +184,7 @@
   },
   "19": {
     "inputs": {
-      "image": "canvasAlphaOutput7jk0ip (53).png",
+      "image": "canvasAlphaOutput7jk0ip (7).png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -229,9 +229,21 @@
       "title": "🔧 Mask Blur"
     }
   },
+  "22": {
+    "inputs": {
+      "mask": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
   "23": {
     "inputs": {
-      "unet_name": "flux1-dev-Q4_0.gguf"
+      "unet_name": "Flux\\Dev\\GGUF\\flux1-depth-dev-fp16-Q8_0-GGUF.gguf"
     },
     "class_type": "UnetLoaderGGUF",
     "_meta": {
@@ -241,8 +253,8 @@
   "24": {
     "inputs": {
       "clip_name1": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
-      "clip_name2": "clip_l-Q8_0.gguf",
-      "type": "sdxl"
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux"
     },
     "class_type": "DualCLIPLoaderGGUF",
     "_meta": {

@@ -216,8 +216,8 @@
   "49": {
     "inputs": {
       "clip_name1": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
-      "clip_name2": "clip_l-Q8_0.gguf",
-      "type": "sdxl"
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux"
     },
     "class_type": "DualCLIPLoaderGGUF",
     "_meta": {
